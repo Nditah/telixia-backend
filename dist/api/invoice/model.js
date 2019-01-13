@@ -56,8 +56,12 @@ var schemaUpdate = exports.schemaUpdate = {
 
 var schema = exports.schema = {
     id: { type: Sequelize.INTEGER(11), primaryKey: true, autoIncrement: true },
-    label: { type: Sequelize.STRING, comment: "tag" },
-    remark: { type: Sequelize.STRING },
+    transaction_code: { type: Sequelize.STRING, comment: "txref" },
+    customer_id: { type: Sequelize.STRING },
+    amount: { type: Sequelize.DECIMAL(10, 2), allowNull: false },
+    currency: { type: Sequelize.STRING, allowNull: false, defaultValue: "NGN" },
+    transaction_status: { type: Sequelize.ENUM("PENDING", "SUCCESSFUL", "FAILED"), defaultValue: "PENDING" },
+    description: { type: Sequelize.STRING },
     created_by: { type: Sequelize.INTEGER(11), allowNull: false, defaultValue: 1 },
     updated_by: { type: Sequelize.INTEGER(11) }
 };

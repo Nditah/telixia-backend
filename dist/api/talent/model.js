@@ -47,11 +47,7 @@ var force = _constants.DATABASE.DROP_TABLE_IF_EXIST.FALSE; /**
                                                             * @property {String} photo Talent photo url
                                                             * @property {String} address Talent residential or work address
                                                             * @property {String} country_iso2 Talent country of residence (required)
-                                                            * @property {Boolean} is_pmt_talent assert that talent is also a PMT talent
-                                                            * @property {Boolean} is_pesl_talent assert that talent is also a PESL talent
-                                                            * @property {Boolean} is_pet_talent assert that talent is also a PET talent
-                                                            * @property {Boolean} is_shop_talent assert that talent is also a SHOP talent
-                                                            * @property {Boolean} is_tenant assert if talent is a depot tenant
+                                                            * @property {String} packages Talent packages of interest
                                                             * @property {Boolean} is_phone_verified phone verification status
                                                             * @property {Boolean} is_email_verified email verification status
                                                             * @property {String} remark comment about talent
@@ -91,11 +87,7 @@ var schemaCreate = exports.schemaCreate = {
     photo: _joi2.default.string().optional(),
     address: _joi2.default.string().optional(),
     country_iso2: _joi2.default.string().trim().required(),
-    is_pmt_talent: _joi2.default.boolean().optional(),
-    is_pesl_talent: _joi2.default.boolean().optional(),
-    is_pet_talent: _joi2.default.boolean().optional(),
-    is_shop_talent: _joi2.default.boolean().optional(),
-    is_tenant: _joi2.default.boolean().optional(),
+    packages: _joi2.default.string().optional(),
     is_phone_verified: _joi2.default.boolean().optional(),
     is_email_verified: _joi2.default.boolean().optional(),
     remark: _joi2.default.string().optional(),
@@ -120,11 +112,7 @@ var schemaUpdate = exports.schemaUpdate = {
     photo: _joi2.default.string().optional(),
     address: _joi2.default.string().optional(),
     country_iso2: _joi2.default.string().trim().optional(),
-    is_pmt_talent: _joi2.default.boolean().optional(),
-    is_pesl_talent: _joi2.default.boolean().optional(),
-    is_pet_talent: _joi2.default.boolean().optional(),
-    is_shop_talent: _joi2.default.boolean().optional(),
-    is_tenant: _joi2.default.boolean().optional(),
+    packages: _joi2.default.string().optional(),
     is_phone_verified: _joi2.default.boolean().optional(),
     is_email_verified: _joi2.default.boolean().optional(),
     remark: _joi2.default.string().optional(),
@@ -157,11 +145,7 @@ var schema = exports.schema = {
     photo: { type: Sequelize.STRING },
     address: { type: Sequelize.STRING },
     country_iso2: { type: Sequelize.STRING(2), allowNull: false },
-    is_pmt_talent: { type: Sequelize.BOOLEAN, defaultValue: false },
-    is_pesl_talent: { type: Sequelize.BOOLEAN, defaultValue: false },
-    is_pet_talent: { type: Sequelize.BOOLEAN, defaultValue: false },
-    is_shop_talent: { type: Sequelize.BOOLEAN, defaultValue: false },
-    is_tenant: { type: Sequelize.BOOLEAN, defaultValue: false },
+    packages: { type: Sequelize.STRING, defaultValue: false },
     is_phone_verified: { type: Sequelize.BOOLEAN, defaultValue: false },
     is_email_verified: { type: Sequelize.BOOLEAN, defaultValue: false },
     remark: { type: Sequelize.STRING },

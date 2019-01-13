@@ -4,40 +4,11 @@ const EMPLOYEE_TYPE = {
     CONTRACTOR: "CONTRACTOR",
 };
 
-export const OFFICE_TYPE = {
-    BOARD: "BOARD",
-    DIRECTORATE: "DIRECTORATE",
-    SUBSIDIARY: "SUBSIDIARY",
-    DEPARTMENT: "DEPARTMENT",
-    UNIT: "UNIT",
-    SUBUNIT: "SUBUNIT",
-};
-
-export const PMT = {
-    BOOKING_STATUS: { CLOSED: "CLOSED", OPEN: "OPEN" },
-    BOOKING_METHOD: { LIVE: "LIVE", RESERVATION: "RESERVATION", OFFLINE: "OFFLINE" },
-    SCHEDULE_MODE: { DUMMY: "DUMMY", TIMELY: "TIMELY", DISABLE: "DISABLE" },
-    PAYMENT_METHOD: { WEBPAY: "WEBPAY", RAVE: "RAVE", POS: "POS", CASH: "CASH" },
-    TRANSACTION_STATUS: { PENDING: "PENDING", SUCCESSFUL: "SUCCESSFUL", FAIL: "FAIL" },
-    RESERVATION_STATUS: { BOARDED: "BOARDED", BOOKED: "BOOKED" },
-    SCHEDULE_STATUS: { ENROUTE: "ENROUTE", QUEUING: "QUEUING", BOARDING: "BOARDING" },
-    ROUTE_CATEGORY: { LOCAL: "LOCAL", HIGHWAY: "HIGHWAY", SUBHIGHWAY: "SUBHIGHWAY" },
-};
-
-export const PML = {
-    RECIPIENT_TYPE: { INDIVIDUAL: "INDIVIDUAL", ORGANIZATION: "ORGANIZATION" },
-    PAYMENT_METHOD: { WEBPAY: "WEBPAY", RAVE: "RAVE", POS: "POS", CASH: "CASH" },
-    TRANSACTION_STATUS: { PENDING: "PENDING", SUCCESSFUL: "SUCCESSFUL", FAIL: "FAIL" },
-    ROUTING_STATUS: { STORE: "STORE", TRANSIT: "TRANSIT" },
-    DELIVERY_STATUS: { PENDING: "PENDING", STORE: "STORE", TRANSIT: "TRANSIT", DELIVER: "DELIVER", DISCHARGE: "DISCHARGE" },
-    DELIVERY_TYPE: { HOME: "HOME", TERMINAL: "TERMINAL" },
-    BILLING_TYPE: { PRE_PAID: "PRE_PAID", POST_PAID: "POST_PAID", DEDICATED: "DEDICATED" },
-    FRAGILITY: { ROBUST: "ROBUST", FRAGILE: "FRAGILE" },
-    PERISHABILITY: { NONPERISHABLE: "NONPERISHABLE", PERISHABLE: "PERISHABLE" },
-    COMBUSTIBILITY: { NONCOMBUSTIBLE: "NONCOMBUSTIBLE", COMBUSTIBLE: "COMBUSTIBLE" },
-    ODIFEROUSNESS: { ODOROUS: "ODOROUS", ODORLESS: "ODORLESS" },
-    SOLIDITY: { SOLID: "SOLID", LIQUID: "LIQUID" },
-    UNIQUENESS: { ORDINARY: "ORDINARY", EXTRAORDINARY: "EXTRAORDINARY" },
+export const SERVICES = {
+    MENTORING: "MENTORING",
+    OUTSOURCING: "OUTSOURCING",
+    RECRUITING: "RECRUITING",
+    PARTNERSHIP: "PARTNERSHIP",
 };
 
 const STATUS_MSG = {
@@ -47,15 +18,10 @@ const STATUS_MSG = {
             customMessage: "record with this name already exists",
             type: "ALREADY_EXISTS",
         },
-        USER_NOT_FOUND: {
+        RECORD_NOT_FOUND: {
             statusCode: 404,
             customMessage: "User doesnt not exist",
-            type: "USER_NOT_FOUND",
-        },
-        VEHICLE_NOT_FOUND: {
-            statusCode: 404,
-            customMessage: "Specified vehicle doesnt not exist",
-            type: "VEHICLE_NOT_FOUND",
+            type: "RECORD_NOT_FOUND",
         },
         PAYMENT_NOT_PROCESSED: {
             statusCode: 400,
@@ -82,7 +48,6 @@ const STATUS_MSG = {
             customMessage: "Please create new profile",
             type: "PLEASE_CREATE_NEW_PROFILE",
         },
-
         INVALID_USER_PASS: {
             statusCode: 401,
             type: "INVALID_USER_PASS",
@@ -102,16 +67,6 @@ const STATUS_MSG = {
             statusCode: 400,
             customMessage: "Invalid Id Provided.",
             type: "INVALID_ID",
-        },
-        INVALID_DRIVER_ID: {
-            statusCode: 400,
-            customMessage: "Invalid Driver Id Provided.",
-            type: "INVALID_DRIVER_ID",
-        },
-        DRIVER_ALREADY_ASSIGNED: {
-            statusCode: 400,
-            customMessage: "Driver already assigned to job.",
-            type: "DRIVER_ALREADY_ASSIGNED",
         },
         ORDER_PENDING: {
             statusCode: 400,
@@ -591,62 +546,14 @@ const EMPLOYMENT_STATUS = {
     ON_RETIREMENT: "ON_RETIREMENT",
 };
 
-const SUBSIDIARY = {
-    PMT: "PMT",
-    PML: "PML",
-    PET: "PET",
-    SHOP: "SHOP",
-    PRESS: "PRESS",
-    ASSEMBLY: "ASSEMBLY",
-    CHEMICAL: "CHEMICAL",
-    PEACEGROUP: "PEACEGROUP",
-};
-
-export const VEHICLE = {
-    VEHICLE_MAKE: { TOYOTA: "TOYOTA", UGAMA: "UGAMA", MEIYER: "MEIYER" },
-    VEHICLE_CATEGORY: {
-        PMT: "PMT",
-        PATROL: "PATROL",
-        PML: "PML", // DELIVERY VAN
-        PET: "PET", // DELIVERY VAN
-        PRESS: "PRESS", // DELIVERY VAN
-        SHOP: "SHOP", // FOR SALE
-        OFFICIAL_PRIVATE: "OFFICIAL_PRIVATE", // PRIVATE USE
-        OFFICIAL_GENERAL: "OFFICIAL_GENERAL", // GENERAL USE
-    },
-    VEHICLE_CLASS: {
-        FIRST: "FIRST", // New Vehicle with Aircondition
-        SECOND: "SECOND", // New Vehicle without Aircondition
-        THIRD: "THIRD", // Old Vehicle
-    },
-    VEHICLE_TYPE: {
-        BUS: "BUS",
-        SIENNA: "SIENNA",
-        CAR: "CAR",
-        TAXI: "TAXI",
-        KEKE: "KEKE",
-        BIKE: "BIKE",
-        JEEP: "JEEP",
-    },
-    VEHICLE_LOCATION: {
-        OPERATION: "OPERATION",
-        IMPOUNDED: "IMPOUNDED",
-        WORKSHOP: "WORKSHOP",
-        WAREHOUSE: "WAREHOUSE",
-        SHOP: "SHOP",
-        SCRAP: "SCRAP",
-        UNKNOWN: "UNKNOWN",
-    },
-    VEHICLE_ASSIGNMENT: {
-        ASSIGNED: "ASSIGNED",
-        REASSIGNED: "REASSIGNED",
-        UNASSIGNED: "UNASSIGNED",
-    },
-};
-
-const ASSET_WORTHINESS = {
-    APPRECIATE: "APPRECIATE",
-    DEPRECIATE: "DEPRECIATE",
+const DEPARTMENT = {
+    FRONTEND: "FRONTEND",
+    BACKEND: "BACKEND",
+    ANDROID: "ANDROID",
+    IOS: "IOS",
+    DEVOPS: "DEVOPS",
+    OPERATIONS: "OPERATIONS",
+    HR: "HR",
 };
 
 export const BANK_ACCOUNT_TYPE = {
@@ -655,37 +562,9 @@ export const BANK_ACCOUNT_TYPE = {
     DOMICIARY: "DOMICIARY",
 };
 
-export const BANK_ACCOUNT_USAGE = {
-    WEBPAY: "WEBPAY",
-    POS: "POS",
-    REMITTANCE: "REMITTANCE",
-    REGULAR: "REGULAR",
-};
-
-export const ACCOUNT_CLASS_TYPE = {
-    ASSETS: "ASSETS",
-    LIABILITIES: "LIABILITIES",
-    CAPITAL: "CAPITAL",
-    REVENUE: "REVENUE",
-    EXPENSES: "EXPENSES",
-};
-
-export const ACCOUNT_CLASS_CATEGORY = {
-    ADMINISTRATIVE: "ADMINISTRATIVE", OPERATION: "OPERATION",
-};
-
-export const ACCESS_LEVEL = [
-    { name: "LOW", level: 0, user: "EMPLOYEE", description: "Cannot Access the ERP" },
-    { name: "NORMAL", level: 1, user: "OFFICER", description: "Can only login and view ERP" },
-    { name: "HIGH", level: 2, user: "UNIT_HEAD", description: "Can carry out all basic operations" },
-    { name: "VERY_HIGH", level: 3, user: "DEPT_HEAD", description: "Record Acknowledgement" },
-    { name: "ULTRA_HIGH", level: 4, user: "DIRECTOR", description: "Record Approval" },
-    { name: "UNLIMITED", level: 5, user: "CHAIRMAN", description: "Unlimited Privilege" },
-];
-
 export const JWT = {
     saltRounds: 2,
-    jwtSecret: "yo-it`s-a_hidden-secret",
+    jwtSecret: "yo ma nigga`s-a_hidden-secret",
     tokenExpireTime: "6h",
 };
 
@@ -699,8 +578,8 @@ export const SMS = {
 };
 
 export const DATABASE = {
-    TABLES: ["STAFF", "DRIVER", "OWNER", "VEHICLE", "ASSET"],
-    DROP_TABLE_IF_EXIST: { TRUE: true, FALSE: false },
+    TABLES: ["AMIND", "TALENT", "CLIENT", "INVOICE", "PACKAGE"],
+    DROP_TABLE_IF_EXIST: { TRUE: true, FALSE: true },
     RECORD_STATUS: {
         PENDING: "PENDING",
         REJECTED: "REJECTED",
@@ -712,6 +591,17 @@ export const DATABASE = {
     },
 };
 
+export const FLUTTERWAVE = {
+    LIVE_TXN_URL: "https://api.ravepay.co/flwv3-pug/getpaidx/api/v2/hosted/pay",
+    TEST_TXN_URL: "https://ravesandboxapi.flutterwave.com/flwv3-pug/getpaidx/api/v2/hosted/pay",
+    LIVE_VERIFY_URL: "https://api.ravepay.co/flwv3-pug/getpaidx/api/v2/verify",
+    TEST_VERIFY_URL: "https://ravesandboxapi.flutterwave.com/flwv3-pug/getpaidx/api/v2/verify",
+    PUBLIC_KEY: "<ADD PBFPubKey is FLUTERWAVE PUBLIC KEY HERE>",
+    SECRET_KEY: "FLWSECK-e6db11d1f8a6208de8cb2f94e293450e-X",
+    REDIRECT_URL: "https://your-website.com/urltoredirectto",
+    HASH: "<My harsh>",
+};
+
 export {
     EMPLOYEE_TYPE,
     GENDER,
@@ -720,6 +610,5 @@ export {
     CUSTOMER_TYPE,
     PERSONAL_TITLE,
     EMPLOYMENT_STATUS,
-    SUBSIDIARY,
-    ASSET_WORTHINESS,
+    DEPARTMENT,
 };

@@ -6,7 +6,7 @@ import Joi from "joi";
 import log4js from "log4js";
 import Invoice, { schema, schemaFetch, schemaCreate, schemaUpdate } from "./model";
 import { success, fail, notFound } from "../../lib/response";
-import { STATUS_MSG } from "../../constants";
+import { STATUS_MSG, FLUTTERWAVE } from "../../constants";
 
 // Logging
 const logger = log4js.getLogger("[invoice]");
@@ -115,4 +115,32 @@ export async function deleteRecord(req, res) {
         logger.error(err);
         return fail(res, 500, `Error deleting record. ${err.message}`);
     }
+}
+
+
+export async function flutterwaveWebhook(req, res) {
+    // retrieve the signature from the header
+    const hash = req.headers["verif-hash"];
+    
+    // discard the request, only a post with rave signature header gets our attention
+    if (!hash) return fail(res, 422, `Error validating request header. ${hash}`); 
+  
+    // Get signature stored as env variable on your server
+    const secret_hash = FLUTTERWAVE.HASH;
+  
+  // check if signatures match
+  if(hash !== secret_hash) {
+    logger.error(`Error invalid transaction signature. ${hash}`, []);
+    return fail(res, 422, `Error invalid transaction signature. ${hash}`); 
+  }
+  
+  // Retrieve the request's body
+  const request_json = JSON.parse(req.body);
+    logger.info(STATUS_MSG.SUCCESS.DEFAULT, []);
+
+    // Give value to your customer but don't give any output
+    // Remember that this is a call from rave's servers and 
+    // Your customer is not seeing the response here at all
+    return success(res, 200, result, "Transaction was successful!");
+    // Update Invoice if it exist or create an invoice with status of "success"
 }

@@ -79,5 +79,16 @@ router.put("/invoices/:recordId", [_authorization.checkAuth, _authorization.isVa
  */
 router.delete("/invoices/:recordId", [_authorization.checkAuth, _authorization.isValidAdmin], _controller.deleteRecord);
 
+// FLUTTERWAVE
+
+/**
+ * @api {post} /api/flutterwave/webhook flutterwave webhook
+ * @apiName RetrieveFlutterwave
+ * @apiGroup Flutterwave
+ * @apiSuccess {Object[]} Array of Objects of records.
+ * @apiError {Object} 400 Some parameters may contain invalid values.
+ */
+router.post("/flutterwave/webhook", _controller.flutterwaveWebhook);
+
 exports.default = router;
 //# sourceMappingURL=routes.js.map

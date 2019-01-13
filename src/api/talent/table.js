@@ -16,6 +16,7 @@ const table = [
         country_iso2: "ng",
         contact_person: "Adam",
         contact_person_phone: "0802737300",
+        packages: "1,2",
         created_by: 1,
     },
 ];

@@ -4,7 +4,8 @@
  */
 import express from "express";
 import { checkAuth, isValidAdmin } from "../../middleware/authorization";
-import { fetchRecord, createRecord, updateRecord, deleteRecord } from "./controller";
+import { fetchRecord, createRecord, updateRecord, deleteRecord,
+    flutterwaveWebhook } from "./controller";
 
 const router = express.Router();
 
@@ -66,5 +67,17 @@ router.put("/invoices/:recordId", [checkAuth, isValidAdmin], updateRecord);
  * @apiError 401 master access only.
  */
 router.delete("/invoices/:recordId", [checkAuth, isValidAdmin], deleteRecord);
+
+// FLUTTERWAVE
+
+/**
+ * @api {post} /api/flutterwave/webhook flutterwave webhook
+ * @apiName RetrieveFlutterwave
+ * @apiGroup Flutterwave
+ * @apiSuccess {Object[]} Array of Objects of records.
+ * @apiError {Object} 400 Some parameters may contain invalid values.
+ */
+router.post("/flutterwave/webhook", flutterwaveWebhook);
+
 
 export default router;

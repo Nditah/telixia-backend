@@ -35,7 +35,6 @@ var force = _constants.DATABASE.DROP_TABLE_IF_EXIST.FALSE; /**
                                                             * @property {String} surname Client surname (required)
                                                             * @property {String} other_name Client other name (required)
                                                             * @property {String} gender Client gender (required)
-                                                            * @property {Date} birth_date Client date of birth
                                                             * @property {String} phone Client phone number (required)
                                                             * @property {String} email Client email address
                                                             * @property {String} password Client password for accessing the App
@@ -47,11 +46,7 @@ var force = _constants.DATABASE.DROP_TABLE_IF_EXIST.FALSE; /**
                                                             * @property {String} photo Client photo url
                                                             * @property {String} address Client residential or work address
                                                             * @property {String} country_iso2 Client country of residence (required)
-                                                            * @property {Boolean} is_pmt_client assert that client is also a PMT client
-                                                            * @property {Boolean} is_pesl_client assert that client is also a PESL client
-                                                            * @property {Boolean} is_pet_client assert that client is also a PET client
-                                                            * @property {Boolean} is_shop_client assert that client is also a SHOP client
-                                                            * @property {Boolean} is_tenant assert if client is a depot tenant
+                                                            * @property {String} services Client services rendered by the company
                                                             * @property {Boolean} is_phone_verified phone verification status
                                                             * @property {Boolean} is_email_verified email verification status
                                                             * @property {String} remark comment about client
@@ -79,7 +74,6 @@ var schemaCreate = exports.schemaCreate = {
     surname: _joi2.default.string().required(),
     other_name: _joi2.default.string().required(),
     gender: _joi2.default.string().required(),
-    birth_date: _joi2.default.date().optional(),
     phone: _joi2.default.string().required(),
     email: _joi2.default.string().optional(),
     password: _joi2.default.string().optional(),
@@ -91,11 +85,7 @@ var schemaCreate = exports.schemaCreate = {
     photo: _joi2.default.string().optional(),
     address: _joi2.default.string().optional(),
     country_iso2: _joi2.default.string().trim().required(),
-    is_pmt_client: _joi2.default.boolean().optional(),
-    is_pesl_client: _joi2.default.boolean().optional(),
-    is_pet_client: _joi2.default.boolean().optional(),
-    is_shop_client: _joi2.default.boolean().optional(),
-    is_tenant: _joi2.default.boolean().optional(),
+    services: _joi2.default.string().optional(),
     is_phone_verified: _joi2.default.boolean().optional(),
     is_email_verified: _joi2.default.boolean().optional(),
     remark: _joi2.default.string().optional(),
@@ -108,7 +98,6 @@ var schemaUpdate = exports.schemaUpdate = {
     surname: _joi2.default.string().optional(),
     other_name: _joi2.default.string().optional(),
     gender: _joi2.default.string().optional(),
-    birth_date: _joi2.default.date().optional(),
     phone: _joi2.default.string().optional(),
     email: _joi2.default.string().optional(),
     password: _joi2.default.string().optional(),
@@ -120,11 +109,7 @@ var schemaUpdate = exports.schemaUpdate = {
     photo: _joi2.default.string().optional(),
     address: _joi2.default.string().optional(),
     country_iso2: _joi2.default.string().trim().optional(),
-    is_pmt_client: _joi2.default.boolean().optional(),
-    is_pesl_client: _joi2.default.boolean().optional(),
-    is_pet_client: _joi2.default.boolean().optional(),
-    is_shop_client: _joi2.default.boolean().optional(),
-    is_tenant: _joi2.default.boolean().optional(),
+    services: _joi2.default.string().optional(),
     is_phone_verified: _joi2.default.boolean().optional(),
     is_email_verified: _joi2.default.boolean().optional(),
     remark: _joi2.default.string().optional(),
@@ -134,7 +119,7 @@ var schemaUpdate = exports.schemaUpdate = {
 var schema = exports.schema = {
     id: { type: Sequelize.INTEGER(11), primaryKey: true, autoIncrement: true },
     client_type: {
-        type: Sequelize.ENUM(_constants.CUSTOMER_TYPE.INDIVIDUAL, _constants.CUSTOMER_TYPE.ORGANIZATION),
+        type: Sequelize.ENUM(Object.values(_constants.CUSTOMER_TYPE)),
         defaultValue: _constants.CUSTOMER_TYPE.INDIVIDUAL,
         allowNull: false
     },
@@ -145,7 +130,6 @@ var schema = exports.schema = {
         type: Sequelize.ENUM(_constants.GENDER.MALE, _constants.GENDER.FEMALE),
         allowNull: false
     },
-    birth_date: { type: Sequelize.DATEONLY },
     phone: { type: Sequelize.STRING, allowNull: false },
     email: { type: Sequelize.STRING },
     password: { type: Sequelize.STRING },
@@ -157,11 +141,7 @@ var schema = exports.schema = {
     photo: { type: Sequelize.STRING },
     address: { type: Sequelize.STRING },
     country_iso2: { type: Sequelize.STRING(2), allowNull: false },
-    is_pmt_client: { type: Sequelize.BOOLEAN, defaultValue: false },
-    is_pesl_client: { type: Sequelize.BOOLEAN, defaultValue: false },
-    is_pet_client: { type: Sequelize.BOOLEAN, defaultValue: false },
-    is_shop_client: { type: Sequelize.BOOLEAN, defaultValue: false },
-    is_tenant: { type: Sequelize.BOOLEAN, defaultValue: false },
+    services: { type: Sequelize.STRING, defaultValue: false },
     is_phone_verified: { type: Sequelize.BOOLEAN, defaultValue: false },
     is_email_verified: { type: Sequelize.BOOLEAN, defaultValue: false },
     remark: { type: Sequelize.STRING },

@@ -7,7 +7,6 @@ const table = [
         surname: "Jave",
         other_name: "Scott",
         gender: GENDER.FEMALE,
-        birth_date: new Date(1987, 6, 20),
         phone: "08134836164",
         email: "client@peacegroup.ng",
         password: bcryptjs.hashSync("peace", JWT.saltRounds),

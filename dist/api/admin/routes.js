@@ -43,9 +43,41 @@ router.get("/admins", [_authorization.checkAuth, _authorization.isValidAdmin], _
  * @apiName CreateAdmin
  * @apiGroup Admin
  * @apiParam {String} access_token master access token.
- * @apiParam {Integer} id Admin primaryKey
- * @apiParam {Integer} created_by Admin record created by
- * @apiParam {Number} created_by Admin record created by
+ * @apiParam {String} title Admin title (optional)
+ * @apiParam {String} surname Admin  surname (required)
+ * @apiParam {String} other_name Admin  other_name (required)
+ * @apiParam {String} gender Admin  gender (required)
+ * @apiParam {Date} birth_date Admin  birth_date (required)
+ * @apiParam {String} marital_status Admin  marital_status (required)
+ * @apiParam {String} phone_office Admin  phone_office (required)
+ * @apiParam {String} phone_personal Admin  phone_personal (required)
+ * @apiParam {String} address Admin  address (required)
+ * @apiParam {String} country_iso2 Admin  country_iso2 (required)
+ * @apiParam {String} email Admin  email (required)
+ * @apiParam {String} password Admin  password (required)
+ * @apiParam {String} otp Admin  otp (required)
+ * @apiParam {Integer} otp_count Admin  otp_count (required)
+ * @apiParam {String} kin Admin  kin (required)
+ * @apiParam {String} kin_phone Admin  kin_phone (required)
+ * @apiParam {String} kin_address Admin  kin_address (required)
+ * @apiParam {String} job_responsibility Admin  job_responsibility (required)
+ * @apiParam {String} job_title Admin  job_title (required)
+ * @apiParam {String} highest_qualification Admin  highest_qualification (optional)
+ * @apiParam {String} highest_institution Admin  highest_institution (optional)
+ * @apiParam {String} employment_status Admin  employment_status (required)
+ * @apiParam {Date} employment_date Admin  employment_date (required)
+ * @apiParam {Integer} monthly_tax Admin  monthly_tax (optional)
+ * @apiParam {Integer} monthly_salary Admin  monthly_salary (required)
+ * @apiParam {Integer} bank_id Admin  bank_id (required)
+ * @apiParam {String} bank_account_number Admin  bank_account_number (required)
+ * @apiParam {String} bank_account_name Admin  bank_account_name (required)
+ * @apiParam {Boolean} is_salary_payable Admin  is_salary_payable (optional)
+ * @apiParam {Boolean} is_document_complete Admin  is_document_complete (optional)
+ * @apiParam {Integer} superior_id Admin  superior_id (optional)
+ * @apiParam {String} remark Admin  remark (optional)
+ * @apiParam {String} photo Admin  photo (optional)  
+ * @apiParam {Date} last_login_date Admin  last_login_date (optional)
+ * @apiParam {String} last_login_ip Admin  last_login_ip (optional)
  * @apiSuccess {Object} Admin Admin's data.
  * @apiError {Object} 400 Some parameters may contain invalid values.
  * @apiError 404 Admin not found.
@@ -60,8 +92,41 @@ router.post("/admins", [_authorization.checkAuth, _authorization.isValidAdmin], 
  * @apiPermission master
  * @apiParam {String} access_token master access token.
  * @apiParam {Number} recordId Admin record id (primaryKey)
- * @apiParam {String} name Admin short name
- * @apiParam {Number} updated_by Admin record modified by
+ * @apiParam {String} title Admin title (optional)
+ * @apiParam {String} surname Admin  surname (optional)
+ * @apiParam {String} other_name Admin  other_name (optional)
+ * @apiParam {String} gender Admin  gender (optional)
+ * @apiParam {Date} birth_date Admin  birth_date (optional)
+ * @apiParam {String} marital_status Admin  marital_status (optional)
+ * @apiParam {String} phone_office Admin  phone_office (optional)
+ * @apiParam {String} phone_personal Admin  phone_personal (optional)
+ * @apiParam {String} address Admin  address (optional)
+ * @apiParam {String} country_iso2 Admin  country_iso2 (optional)
+ * @apiParam {String} email Admin  email (optional)
+ * @apiParam {String} password Admin  password (optional)
+ * @apiParam {String} otp Admin  otp (optional)
+ * @apiParam {Integer} otp_count Admin  otp_count (optional)
+ * @apiParam {String} kin Admin  kin (optional)
+ * @apiParam {String} kin_phone Admin  kin_phone (optional)
+ * @apiParam {String} kin_address Admin  kin_address (optional)
+ * @apiParam {String} job_responsibility Admin  job_responsibility (optional)
+ * @apiParam {String} job_title Admin  job_title (optional)
+ * @apiParam {String} highest_qualification Admin  highest_qualification (optional)
+ * @apiParam {String} highest_institution Admin  highest_institution (optional)
+ * @apiParam {String} employment_status Admin  employment_status (optional)
+ * @apiParam {Date} employment_date Admin  employment_date (optional)
+ * @apiParam {Integer} monthly_tax Admin  monthly_tax (optional)
+ * @apiParam {Integer} monthly_salary Admin  monthly_salary (optional)
+ * @apiParam {Integer} bank_id Admin  bank_id (optional)
+ * @apiParam {String} bank_account_number Admin  bank_account_number (optional)
+ * @apiParam {String} bank_account_name Admin  bank_account_name (optional)
+ * @apiParam {Boolean} is_salary_payable Admin  is_salary_payable (optional)
+ * @apiParam {Boolean} is_document_complete Admin  is_document_complete (optional)
+ * @apiParam {Integer} superior_id Admin  superior_id (optional)
+ * @apiParam {String} remark Admin  remark (optional)
+ * @apiParam {String} photo Admin  photo (optional)  
+ * @apiParam {Date} last_login_date Admin  last_login_date (optional)
+ * @apiParam {String} last_login_ip Admin  last_login_ip (optional)
  * @apiSuccess {Object} Admin Admin's data.
  * @apiError {Object} 400 Some parameters may contain invalid values.
  * @apiError 404 Admin not found.

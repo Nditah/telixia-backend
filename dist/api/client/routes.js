@@ -49,7 +49,6 @@ router.get("/clients", [_authorization.checkAuth, _authorization.isValidAdmin], 
  * @apiParam {String} surname Client surname (required)
  * @apiParam {String} other_name Client other name (required)
  * @apiParam {String} gender Client gender (required)
- * @apiParam {Date} birth_date Client date of birth
  * @apiParam {String} phone Client phone number (required)
  * @apiParam {String} phone2 Client mobile work or home phone number
  * @apiParam {String} email Client email address
@@ -60,11 +59,7 @@ router.get("/clients", [_authorization.checkAuth, _authorization.isValidAdmin], 
  * @apiParam {String} photo Client photo url
  * @apiParam {String} address Client residential or work address
  * @apiParam {String} country_iso2 Client country of residence (required)
- * @apiParam {Boolean} is_pmt_client assert that client is also a PMT client
- * @apiParam {Boolean} is_pesl_client assert that client is also a PESL client
- * @apiParam {Boolean} is_pet_client assert that client is also a PET client
- * @apiParam {Boolean} is_shop_client assert that client is also a SHOP client
- * @apiParam {Boolean} is_tenant assert if client is a depot tenant
+ * @apiParam {String} services Client rendred to the client
  * @apiParam {Boolean} is_phone_verified phone verification status
  * @apiParam {Boolean} is_email_verified email verification status
  * @apiParam {String} remark comment about client
@@ -90,7 +85,6 @@ router.post("/clients", _controller.createRecord);
  * @apiParam {String} surname Client surname (required)
  * @apiParam {String} other_name Client other name (required)
  * @apiParam {String} gender Client gender (required)
- * @apiParam {Date} birth_date Client date of birth
  * @apiParam {String} phone Client phone number (required)
  * @apiParam {String} phone2 Client mobile work or home phone number
  * @apiParam {String} email Client email address
@@ -101,11 +95,7 @@ router.post("/clients", _controller.createRecord);
  * @apiParam {String} photo Client photo url
  * @apiParam {String} address Client residential or work address
  * @apiParam {String} country_iso2 Client country of residence (required)
- * @apiParam {Boolean} is_pmt_client assert that client is also a PMT client
- * @apiParam {Boolean} is_pesl_client assert that client is also a PESL client
- * @apiParam {Boolean} is_pet_client assert that client is also a PET client
- * @apiParam {Boolean} is_shop_client assert that client is also a SHOP client
- * @apiParam {Boolean} is_tenant assert if client is a depot tenant
+ * @apiParam {String} services Client rendred to the client
  * @apiParam {Boolean} is_phone_verified phone verification status
  * @apiParam {Boolean} is_email_verified email verification status
  * @apiParam {String} remark comment about client

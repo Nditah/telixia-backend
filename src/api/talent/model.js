@@ -18,11 +18,7 @@
  * @property {String} photo Talent photo url
  * @property {String} address Talent residential or work address
  * @property {String} country_iso2 Talent country of residence (required)
- * @property {Boolean} is_pmt_talent assert that talent is also a PMT talent
- * @property {Boolean} is_pesl_talent assert that talent is also a PESL talent
- * @property {Boolean} is_pet_talent assert that talent is also a PET talent
- * @property {Boolean} is_shop_talent assert that talent is also a SHOP talent
- * @property {Boolean} is_tenant assert if talent is a depot tenant
+ * @property {String} packages Talent packages of interest
  * @property {Boolean} is_phone_verified phone verification status
  * @property {Boolean} is_email_verified email verification status
  * @property {String} remark comment about talent
@@ -70,11 +66,7 @@ export const schemaCreate = {
     photo: Joi.string().optional(),
     address: Joi.string().optional(),
     country_iso2: Joi.string().trim().required(),
-    is_pmt_talent: Joi.boolean().optional(),
-    is_pesl_talent: Joi.boolean().optional(),
-    is_pet_talent: Joi.boolean().optional(),
-    is_shop_talent: Joi.boolean().optional(),
-    is_tenant: Joi.boolean().optional(),
+    packages: Joi.string().optional(),
     is_phone_verified: Joi.boolean().optional(),
     is_email_verified: Joi.boolean().optional(),
     remark: Joi.string().optional(),
@@ -99,11 +91,7 @@ export const schemaUpdate = {
     photo: Joi.string().optional(),
     address: Joi.string().optional(),
     country_iso2: Joi.string().trim().optional(),
-    is_pmt_talent: Joi.boolean().optional(),
-    is_pesl_talent: Joi.boolean().optional(),
-    is_pet_talent: Joi.boolean().optional(),
-    is_shop_talent: Joi.boolean().optional(),
-    is_tenant: Joi.boolean().optional(),
+    packages: Joi.string().optional(),
     is_phone_verified: Joi.boolean().optional(),
     is_email_verified: Joi.boolean().optional(),
     remark: Joi.string().optional(),
@@ -136,11 +124,7 @@ export const schema = {
     photo: { type: Sequelize.STRING },
     address: { type: Sequelize.STRING },
     country_iso2: { type: Sequelize.STRING(2), allowNull: false },
-    is_pmt_talent: { type: Sequelize.BOOLEAN, defaultValue: false },
-    is_pesl_talent: { type: Sequelize.BOOLEAN, defaultValue: false },
-    is_pet_talent: { type: Sequelize.BOOLEAN, defaultValue: false },
-    is_shop_talent: { type: Sequelize.BOOLEAN, defaultValue: false },
-    is_tenant: { type: Sequelize.BOOLEAN, defaultValue: false },
+    packages: { type: Sequelize.STRING, defaultValue: false },
     is_phone_verified: { type: Sequelize.BOOLEAN, defaultValue: false },
     is_email_verified: { type: Sequelize.BOOLEAN, defaultValue: false },
     remark: { type: Sequelize.STRING },

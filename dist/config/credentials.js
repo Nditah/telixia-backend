@@ -16,9 +16,9 @@ var getCredentials = function getCredentials() {
     var development = {
         host: "localhost",
         port: 3306,
-        user: "nditahco_user",
-        password: "getsPass1234",
-        database: "nditahco_db",
+        user: "sample_user",
+        password: "sample_pass",
+        database: "sample_db",
         connectionLimit: 15,
         queueLimit: 30,
         acquireTimeout: 1000000

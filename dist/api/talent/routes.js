@@ -60,11 +60,7 @@ router.get("/talents", [_authorization.checkAuth, _authorization.isValidAdmin], 
  * @apiParam {String} photo Talent photo url
  * @apiParam {String} address Talent residential or work address
  * @apiParam {String} country_iso2 Talent country of residence (required)
- * @apiParam {Boolean} is_pmt_talent assert that talent is also a PMT talent
- * @apiParam {Boolean} is_pesl_talent assert that talent is also a PESL talent
- * @apiParam {Boolean} is_pet_talent assert that talent is also a PET talent
- * @apiParam {Boolean} is_shop_talent assert that talent is also a SHOP talent
- * @apiParam {Boolean} is_tenant assert if talent is a depot tenant
+ * @apiParam {String} packages Talent programs of interest
  * @apiParam {Boolean} is_phone_verified phone verification status
  * @apiParam {Boolean} is_email_verified email verification status
  * @apiParam {String} remark comment about talent
@@ -101,11 +97,7 @@ router.post("/talents", _controller.createRecord);
  * @apiParam {String} photo Talent photo url
  * @apiParam {String} address Talent residential or work address
  * @apiParam {String} country_iso2 Talent country of residence (required)
- * @apiParam {Boolean} is_pmt_talent assert that talent is also a PMT talent
- * @apiParam {Boolean} is_pesl_talent assert that talent is also a PESL talent
- * @apiParam {Boolean} is_pet_talent assert that talent is also a PET talent
- * @apiParam {Boolean} is_shop_talent assert that talent is also a SHOP talent
- * @apiParam {Boolean} is_tenant assert if talent is a depot tenant
+ * @apiParam {String} packages Talent programs of interest
  * @apiParam {Boolean} is_phone_verified phone verification status
  * @apiParam {Boolean} is_email_verified email verification status
  * @apiParam {String} remark comment about talent

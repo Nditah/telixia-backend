@@ -17,7 +17,6 @@ var table = [{
     surname: "Jave",
     other_name: "Scott",
     gender: _constants.GENDER.FEMALE,
-    birth_date: new Date(1987, 6, 20),
     phone: "08134836164",
     email: "client@peacegroup.ng",
     password: _bcryptjs2.default.hashSync("peace", _constants.JWT.saltRounds),

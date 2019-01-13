@@ -6,7 +6,6 @@
  * @property {String} surname Client surname (required)
  * @property {String} other_name Client other name (required)
  * @property {String} gender Client gender (required)
- * @property {Date} birth_date Client date of birth
  * @property {String} phone Client phone number (required)
  * @property {String} email Client email address
  * @property {String} password Client password for accessing the App
@@ -18,11 +17,7 @@
  * @property {String} photo Client photo url
  * @property {String} address Client residential or work address
  * @property {String} country_iso2 Client country of residence (required)
- * @property {Boolean} is_pmt_client assert that client is also a PMT client
- * @property {Boolean} is_pesl_client assert that client is also a PESL client
- * @property {Boolean} is_pet_client assert that client is also a PET client
- * @property {Boolean} is_shop_client assert that client is also a SHOP client
- * @property {Boolean} is_tenant assert if client is a depot tenant
+ * @property {String} services Client services rendered by the company
  * @property {Boolean} is_phone_verified phone verification status
  * @property {Boolean} is_email_verified email verification status
  * @property {String} remark comment about client
@@ -58,7 +53,6 @@ export const schemaCreate = {
     surname: Joi.string().required(),
     other_name: Joi.string().required(),
     gender: Joi.string().required(),
-    birth_date: Joi.date().optional(),
     phone: Joi.string().required(),
     email: Joi.string().optional(),
     password: Joi.string().optional(),
@@ -70,11 +64,7 @@ export const schemaCreate = {
     photo: Joi.string().optional(),
     address: Joi.string().optional(),
     country_iso2: Joi.string().trim().required(),
-    is_pmt_client: Joi.boolean().optional(),
-    is_pesl_client: Joi.boolean().optional(),
-    is_pet_client: Joi.boolean().optional(),
-    is_shop_client: Joi.boolean().optional(),
-    is_tenant: Joi.boolean().optional(),
+    services: Joi.string().optional(),
     is_phone_verified: Joi.boolean().optional(),
     is_email_verified: Joi.boolean().optional(),
     remark: Joi.string().optional(),
@@ -87,7 +77,6 @@ export const schemaUpdate = {
     surname: Joi.string().optional(),
     other_name: Joi.string().optional(),
     gender: Joi.string().optional(),
-    birth_date: Joi.date().optional(),
     phone: Joi.string().optional(),
     email: Joi.string().optional(),
     password: Joi.string().optional(),
@@ -99,11 +88,7 @@ export const schemaUpdate = {
     photo: Joi.string().optional(),
     address: Joi.string().optional(),
     country_iso2: Joi.string().trim().optional(),
-    is_pmt_client: Joi.boolean().optional(),
-    is_pesl_client: Joi.boolean().optional(),
-    is_pet_client: Joi.boolean().optional(),
-    is_shop_client: Joi.boolean().optional(),
-    is_tenant: Joi.boolean().optional(),
+    services: Joi.string().optional(),
     is_phone_verified: Joi.boolean().optional(),
     is_email_verified: Joi.boolean().optional(),
     remark: Joi.string().optional(),
@@ -113,7 +98,7 @@ export const schemaUpdate = {
 export const schema = {
     id: { type: Sequelize.INTEGER(11), primaryKey: true, autoIncrement: true },
     client_type: {
-        type: Sequelize.ENUM(CUSTOMER_TYPE.INDIVIDUAL, CUSTOMER_TYPE.ORGANIZATION),
+        type: Sequelize.ENUM(Object.values(CUSTOMER_TYPE)),
         defaultValue: CUSTOMER_TYPE.INDIVIDUAL,
         allowNull: false,
     },
@@ -124,7 +109,6 @@ export const schema = {
         type: Sequelize.ENUM(GENDER.MALE, GENDER.FEMALE),
         allowNull: false,
     },
-    birth_date: { type: Sequelize.DATEONLY },
     phone: { type: Sequelize.STRING, allowNull: false },
     email: { type: Sequelize.STRING },
     password: { type: Sequelize.STRING },
@@ -136,11 +120,7 @@ export const schema = {
     photo: { type: Sequelize.STRING },
     address: { type: Sequelize.STRING },
     country_iso2: { type: Sequelize.STRING(2), allowNull: false },
-    is_pmt_client: { type: Sequelize.BOOLEAN, defaultValue: false },
-    is_pesl_client: { type: Sequelize.BOOLEAN, defaultValue: false },
-    is_pet_client: { type: Sequelize.BOOLEAN, defaultValue: false },
-    is_shop_client: { type: Sequelize.BOOLEAN, defaultValue: false },
-    is_tenant: { type: Sequelize.BOOLEAN, defaultValue: false },
+    services: { type: Sequelize.STRING, defaultValue: false },
     is_phone_verified: { type: Sequelize.BOOLEAN, defaultValue: false },
     is_email_verified: { type: Sequelize.BOOLEAN, defaultValue: false },
     remark: { type: Sequelize.STRING },

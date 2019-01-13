@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
-exports.deleteRecord = exports.updateRecord = exports.createRecord = exports.fetchRecord = undefined;
+exports.flutterwaveWebhook = exports.deleteRecord = exports.updateRecord = exports.createRecord = exports.fetchRecord = undefined;
 
 /**
  * @description fetchRecord() Retrieve  all record(s)
@@ -127,7 +127,7 @@ var fetchRecord = exports.fetchRecord = function () {
 
 var createRecord = exports.createRecord = function () {
     var _ref2 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee2(req, res) {
-        var data, _Joi$validate2, error, result;
+        var data, _Joi$validate2, error, _result;
 
         return regeneratorRuntime.wrap(function _callee2$(_context2) {
             while (1) {
@@ -149,9 +149,9 @@ var createRecord = exports.createRecord = function () {
                         return _model2.default.create(data);
 
                     case 7:
-                        result = _context2.sent;
+                        _result = _context2.sent;
 
-                        if (result) {
+                        if (_result) {
                             _context2.next = 11;
                             break;
                         }
@@ -160,7 +160,7 @@ var createRecord = exports.createRecord = function () {
                         return _context2.abrupt("return", (0, _response.notFound)(res, "Error: Bad Request: Model not found"));
 
                     case 11:
-                        return _context2.abrupt("return", (0, _response.success)(res, 201, result, "Record created successfully!"));
+                        return _context2.abrupt("return", (0, _response.success)(res, 201, _result, "Record created successfully!"));
 
                     case 14:
                         _context2.prev = 14;
@@ -184,7 +184,7 @@ var createRecord = exports.createRecord = function () {
 
 var updateRecord = exports.updateRecord = function () {
     var _ref3 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee3(req, res) {
-        var data, id, _Joi$validate3, error, model, result;
+        var data, id, _Joi$validate3, error, model, _result2;
 
         return regeneratorRuntime.wrap(function _callee3$(_context3) {
             while (1) {
@@ -221,8 +221,8 @@ var updateRecord = exports.updateRecord = function () {
                         return model.update(data);
 
                     case 13:
-                        result = _context3.sent;
-                        return _context3.abrupt("return", (0, _response.success)(res, 200, result, "Record updated successfully!"));
+                        _result2 = _context3.sent;
+                        return _context3.abrupt("return", (0, _response.success)(res, 200, _result2, "Record updated successfully!"));
 
                     case 17:
                         _context3.prev = 17;
@@ -246,7 +246,8 @@ var updateRecord = exports.updateRecord = function () {
 
 var deleteRecord = exports.deleteRecord = function () {
     var _ref4 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee4(req, res) {
-        var id, model, result;
+        var id, model, _result3;
+
         return regeneratorRuntime.wrap(function _callee4$(_context4) {
             while (1) {
                 switch (_context4.prev = _context4.next) {
@@ -271,8 +272,8 @@ var deleteRecord = exports.deleteRecord = function () {
                         return model.destroy();
 
                     case 9:
-                        result = _context4.sent;
-                        return _context4.abrupt("return", (0, _response.success)(res, 200, result, "Record deleted successfully!"));
+                        _result3 = _context4.sent;
+                        return _context4.abrupt("return", (0, _response.success)(res, 200, _result3, "Record deleted successfully!"));
 
                     case 13:
                         _context4.prev = 13;
@@ -291,6 +292,65 @@ var deleteRecord = exports.deleteRecord = function () {
 
     return function deleteRecord(_x7, _x8) {
         return _ref4.apply(this, arguments);
+    };
+}();
+
+var flutterwaveWebhook = exports.flutterwaveWebhook = function () {
+    var _ref5 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee5(req, res) {
+        var hash, secret_hash, request_json;
+        return regeneratorRuntime.wrap(function _callee5$(_context5) {
+            while (1) {
+                switch (_context5.prev = _context5.next) {
+                    case 0:
+                        // retrieve the signature from the header
+                        hash = req.headers["verif-hash"];
+
+                        // discard the request, only a post with rave signature header gets our attention
+
+                        if (hash) {
+                            _context5.next = 3;
+                            break;
+                        }
+
+                        return _context5.abrupt("return", (0, _response.fail)(res, 422, "Error validating request header. " + hash));
+
+                    case 3:
+
+                        // Get signature stored as env variable on your server
+                        secret_hash = _constants.FLUTTERWAVE.HASH;
+
+                        // check if signatures match
+
+                        if (!(hash !== secret_hash)) {
+                            _context5.next = 7;
+                            break;
+                        }
+
+                        logger.error("Error invalid transaction signature. " + hash, []);
+                        return _context5.abrupt("return", (0, _response.fail)(res, 422, "Error invalid transaction signature. " + hash));
+
+                    case 7:
+
+                        // Retrieve the request's body
+                        request_json = JSON.parse(req.body);
+
+                        logger.info(_constants.STATUS_MSG.SUCCESS.DEFAULT, []);
+
+                        // Give value to your customer but don't give any output
+                        // Remember that this is a call from rave's servers and 
+                        // Your customer is not seeing the response here at all
+                        return _context5.abrupt("return", (0, _response.success)(res, 200, result, "Transaction was successful!"));
+
+                    case 10:
+                    case "end":
+                        return _context5.stop();
+                }
+            }
+        }, _callee5, this);
+    }));
+
+    return function flutterwaveWebhook(_x9, _x10) {
+        return _ref5.apply(this, arguments);
     };
 }();
 

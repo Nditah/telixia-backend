@@ -5,3 +5,6 @@
 [2019-01-13T13:41:13.967] [INFO] [setting] - { statusCode: 200, customMessage: 'Success', type: 'DEFAULT' } []
 [2019-01-13T13:41:39.794] [INFO] [talent] - { statusCode: 200, customMessage: 'Success', type: 'DEFAULT' } []
 [2019-01-13T13:45:42.352] [INFO] [admins] - { statusCode: 200, customMessage: 'Success', type: 'DEFAULT' } []
+[2019-01-13T21:49:23.099] [INFO] [package] - { statusCode: 200, customMessage: 'Success', type: 'DEFAULT' } []
+[2019-01-13T22:37:46.224] [INFO] [package] - { statusCode: 200, customMessage: 'Success', type: 'DEFAULT' } []
+[2019-01-13T22:41:21.355] [INFO] [image] - { statusCode: 200, customMessage: 'Success', type: 'DEFAULT' } []
