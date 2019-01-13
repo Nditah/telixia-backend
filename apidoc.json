@@ -1,0 +1,9 @@
+{
+  "name": "Telixia API",
+  "version": "0.1.0",
+  "description": "apiDoc basic example",
+  "apidoc": {
+    "title": "Telixia apiDoc",
+    "url" : "https://api.github.com/v1"
+  }
+}
