@@ -110,7 +110,7 @@ export const schemaUpdate = {
     updated_by: Joi.number().required(),
 };
 
-const schema = {
+export const schema = {
     id: { type: Sequelize.INTEGER(11), primaryKey: true, autoIncrement: true },
     client_type: {
         type: Sequelize.ENUM(CUSTOMER_TYPE.INDIVIDUAL, CUSTOMER_TYPE.ORGANIZATION),

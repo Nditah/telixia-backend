@@ -1,17 +1,17 @@
 import bcryptjs from "bcryptjs";
 import jwt from "jsonwebtoken";
 import * as Sequelize from "sequelize";
-import Staff from "../api/staff/model";
+import Admin from "../api/admin/model";
 import Talent from "../api/talent/model";
 import Client from "../api/client/model";
 import { JWT } from "../constants";
 
 const { Op } = Sequelize;
 
-export function staffAuthenticate(params) {
+export function adminAuthenticate(params) {
     // return next();
     const { email, phone_office: phone, otp, password } = params;
-    return Staff.findOne({
+    return Admin.findOne({
         where: {
             [ Op.or ]: [{ email }, { phone_office: phone }],
         },
@@ -26,7 +26,7 @@ export function staffAuthenticate(params) {
             }
             const payload = {
                 id: user.id,
-                userType: "staff",
+                userType: "admin",
                 email: user.email,
                 phone_office: user.phone_office,
                 office_id: user.office_id,
@@ -43,7 +43,7 @@ export function staffAuthenticate(params) {
 export function talentAuthenticate(params) {
     // return next();
     const { email, phone_office: phone, otp, password } = params;
-    return talent.findOne({
+    return Talent.findOne({
         where: {
             [ Op.or ]: [{ email }, { phone_office: phone }],
         },
@@ -70,36 +70,6 @@ export function talentAuthenticate(params) {
             });
             return token;
         });
-}
-
-
-export async function ownerAuthenticate(params) {
-    // return next();
-    const { email, phone_office: phone, otp, password } = params;
-    const user = await Owner.findOne({
-        where: {
-            [Op.or]: [{ email }, { phone_office: phone }],
-        },
-        raw: true,
-    });
-    if (!user) {
-        throw new Error("Authentication failed. talent not found.");
-    }
-    if (!(bcryptjs.compareSync(password || "", user.password)
-        || bcryptjs.compareSync(otp || "", user.otp))) {
-        throw new Error("Authentication failed. Wrong password or otp.");
-    }
-    const payload = {
-        id: user.id,
-        userType: "talent",
-        email: user.email,
-        phone_office: user.phone_office,
-        time: new Date(),
-    };
-    const token = jwt.sign(payload, JWT.jwtSecret, {
-        expiresIn: JWT.tokenExpireTime,
-    });
-    return token;
 }
 
 export function clientAuthenticate(params) {

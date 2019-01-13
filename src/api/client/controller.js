@@ -4,7 +4,7 @@
  */
 import Joi from "joi";
 import log4js from "log4js";
-import Client, { schemaFetch, schemaCreate, schemaUpdate } from "./model";
+import Client, { schema, schemaFetch, schemaCreate, schemaUpdate } from "./model";
 import { success, fail, notFound } from "../../lib/response";
 import { STATUS_MSG } from "../../constants";
 

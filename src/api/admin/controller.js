@@ -1,19 +1,19 @@
 /**
  * @author 4Decoder
- * @description Staff holds record of all cities with terminals
+ * @description Admin holds record of all cities with terminals
  */
 import Joi from "joi";
 import log4js from "log4js";
-import Staff, { schemaLogin, schemaFetch, schemaCreate, schemaUpdate } from "./model";
+import Admin, { schema, schemaLogin, schemaFetch, schemaCreate, schemaUpdate } from "./model";
 import { success, fail, notFound } from "../../lib/response";
 import { STATUS_MSG } from "../../constants";
 
-import { staffAuthenticate } from "../../services/authenticate";
+import { adminAuthenticate } from "../../services/authenticate";
 
 // Logging
-const logger = log4js.getLogger("[staff]");
+const logger = log4js.getLogger("[admins]");
 log4js.configure({
-    appenders: { file: { type: "file", filename: "logs/staff.log" } },
+    appenders: { file: { type: "file", filename: "logs/admins.log" } },
     categories: { default: { appenders: ["file"], level: "debug" } },
 });
 
@@ -49,12 +49,12 @@ export async function fetchRecord(req, res) {
     try {
         if (id) {
             if (attributes.length > 0) {
-                result = await Staff.findOne({ where: { id }, attributes });
+                result = await Admin.findOne({ where: { id }, attributes });
             } else {
-                result = await Staff.findOne({ where: { id } });
+                result = await Admin.findOne({ where: { id } });
             }
         } else {
-            result = await Staff.findAll(options);
+            result = await Admin.findAll(options);
         }
         if (!result) {
             return notFound(res, "Error: Bad Request: Model not found");
@@ -72,7 +72,7 @@ export async function createRecord(req, res) {
     const { error } = Joi.validate(data, schemaCreate);
     if (error) return fail(res, 422, `Error validating request data. ${error.message}`);
     try {
-        const result = await Staff.create(data);
+        const result = await Admin.create(data);
         if (!result) {
             logger.info(STATUS_MSG.SUCCESS.DEFAULT, []);
             return notFound(res, "Error: Bad Request: Model not found");
@@ -90,7 +90,7 @@ export async function updateRecord(req, res) {
     const { error } = Joi.validate(data, schemaUpdate);
     if (error) return fail(res, 422, `Error validating request data. ${error.message}`);
     try {
-        const model = await Staff.findByPk(id);
+        const model = await Admin.findByPk(id);
         if (!model) {
             return notFound(res, `Bad Request: Model not found with id ${id}`);
         }
@@ -105,7 +105,7 @@ export async function updateRecord(req, res) {
 export async function deleteRecord(req, res) {
     const { recordId: id } = req.params;
     try {
-        const model = await Staff.findByPk(id);
+        const model = await Admin.findByPk(id);
         if (!model) {
             return notFound(res, `Bad Request: Model not found with id ${id}`);
         }
@@ -120,7 +120,7 @@ export async function deleteRecord(req, res) {
 export async function login(req, res) {
     const { error } = Joi.validate(req.body, schemaLogin);
     if (error) return fail(res, 422, `Error validating request data. ${error.message}`);
-    return staffAuthenticate(req.body)
+    return adminAuthenticate(req.body)
         .then(token => success(res, 200, { token }, "Login was successful!"))
         .catch(err => fail(res, 500, `Error occurred. ${err.message}`));
 }

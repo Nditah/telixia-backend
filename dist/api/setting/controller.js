@@ -40,7 +40,7 @@ var fetchRecord = exports.fetchRecord = function () {
                         if (fields && typeof fields === "string") {
                             fieldsArray = fields.replace(/\s+/g, "").split(",");
                         }
-                        eligibleField = Object.keys(schema);
+                        eligibleField = Object.keys(_model.schema);
 
                         eligibleField.push("created_at", "updated_at");
                         attributes = [];

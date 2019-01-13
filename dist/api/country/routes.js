@@ -58,7 +58,7 @@ router.get("/countries", _controller.fetchRecord);
  * @apiError 404 Country not found.
  * @apiError 401 master access only.
  */
-router.post("/countries", [_authorization.checkAuth, _authorization.isValidStaff], _controller.createRecord);
+router.post("/countries", [_authorization.checkAuth, _authorization.isValidAdmin], _controller.createRecord);
 
 /**
  * @api {put} /api/countries/{recordId} Update countries
@@ -81,7 +81,7 @@ router.post("/countries", [_authorization.checkAuth, _authorization.isValidStaff
  * @apiError 404 Country not found.
  * @apiError 401 master access only.
  */
-router.put("/countries/:recordId", [_authorization.checkAuth, _authorization.isValidStaff], _controller.updateRecord);
+router.put("/countries/:recordId", [_authorization.checkAuth, _authorization.isValidAdmin], _controller.updateRecord);
 
 /**
  * @api {delete} /api/countries/{recordId} Delete countries
@@ -93,7 +93,7 @@ router.put("/countries/:recordId", [_authorization.checkAuth, _authorization.isV
  * @apiError 404 Country not found.
  * @apiError 401 master access only.
  */
-router.delete("/countries/:recordId", [_authorization.checkAuth, _authorization.isValidStaff], _controller.deleteRecord);
+router.delete("/countries/:recordId", [_authorization.checkAuth, _authorization.isValidAdmin], _controller.deleteRecord);
 
 exports.default = router;
 //# sourceMappingURL=routes.js.map

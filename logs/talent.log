@@ -1,0 +1,7 @@
+[2019-01-13T13:32:49.987] [INFO] [client] - { statusCode: 200, customMessage: 'Success', type: 'DEFAULT' } []
+[2019-01-13T13:33:06.373] [INFO] [country] - { statusCode: 200, customMessage: 'Success', type: 'DEFAULT' } []
+[2019-01-13T13:39:31.655] [INFO] [image] - { statusCode: 200, customMessage: 'Success', type: 'DEFAULT' } []
+[2019-01-13T13:40:54.671] [INFO] [invoice] - { statusCode: 200, customMessage: 'Success', type: 'DEFAULT' } []
+[2019-01-13T13:41:13.967] [INFO] [setting] - { statusCode: 200, customMessage: 'Success', type: 'DEFAULT' } []
+[2019-01-13T13:41:39.794] [INFO] [talent] - { statusCode: 200, customMessage: 'Success', type: 'DEFAULT' } []
+[2019-01-13T13:45:42.352] [INFO] [admins] - { statusCode: 200, customMessage: 'Success', type: 'DEFAULT' } []

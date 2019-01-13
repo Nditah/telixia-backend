@@ -17,83 +17,83 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var router = _express2.default.Router();
 
 /**
- * @api {get} /api/staff?id={recordId} Retrieve one or all records
- * @apiName RetrieveStaff
- * @apiGroup Employee
+ * @api {get} /api/admin?id={recordId} Retrieve one or all records
+ * @apiName RetrieveAdmin
+ * @apiGroup Admin
  * @apiExample {curl} Example usage for retieving a single record:
- *      curl -i http://localhost/api/staff?id=2&fields=id,created_at,updated_at
+ *      curl -i http://localhost/api/admin?id=2&fields=id,created_at,updated_at
  * @apiExample {curl} Example usage for retieving multiple records:
- *      curl -i http://localhost/api/staff?offset=10&limit=50
+ *      curl -i http://localhost/api/admin?offset=10&limit=50
  * @apiParam {Number} id Unique id of the record to retrieve (optional)
  * @apiParam {Number} offset Number of records to skip (optional)
  * @apiParam {Number} limit Maximum Number of records to retrieve (optional)
  * @apiParam {String} fields Comma-separated list of record's attributes to retrieve (optional)
- * @apiDescription Records of staff distributed across terminals.
+ * @apiDescription Records of admin distributed across terminals.
  * @apiSuccess {Object[]} Array of Objects of records.
  * @apiError {Object} 400 Some parameters may contain invalid values.
  */
 /**
  * @author 4Decoder
- * @description Staff holds record of all staff with terminals
+ * @description Admin holds record of all admin with terminals
  */
-router.get("/staff", [_authorization.checkAuth, _authorization.isValidStaff], _controller.fetchRecord);
+router.get("/admin", [_authorization.checkAuth, _authorization.isValidAdmin], _controller.fetchRecord);
 
 /**
- * @api {post} /api/staff Create staff
- * @apiName CreateStaff
- * @apiGroup Employee
+ * @api {post} /api/admin Create admin
+ * @apiName CreateAdmin
+ * @apiGroup Admin
  * @apiParam {String} access_token master access token.
- * @apiParam {Integer} id Staff primaryKey
- * @apiParam {Integer} created_by Staff record created by
- * @apiParam {Number} created_by Staff record created by
- * @apiSuccess {Object} Staff Staff's data.
+ * @apiParam {Integer} id Admin primaryKey
+ * @apiParam {Integer} created_by Admin record created by
+ * @apiParam {Number} created_by Admin record created by
+ * @apiSuccess {Object} Admin Admin's data.
  * @apiError {Object} 400 Some parameters may contain invalid values.
- * @apiError 404 Staff not found.
+ * @apiError 404 Admin not found.
  * @apiError 401 master access only.
  */
-router.post("/staff", [_authorization.checkAuth, _authorization.isValidStaff], _controller.createRecord);
+router.post("/admin", [_authorization.checkAuth, _authorization.isValidAdmin], _controller.createRecord);
 
 /**
- * @api {put} /api/staff/{recordId} Update staff
- * @apiName UpdateStaff
- * @apiGroup Employee
+ * @api {put} /api/admin/{recordId} Update admin
+ * @apiName UpdateAdmin
+ * @apiGroup Admin
  * @apiPermission master
  * @apiParam {String} access_token master access token.
- * @apiParam {Number} recordId Staff record id (primaryKey)
- * @apiParam {String} name Staff short name
- * @apiParam {Number} updated_by Staff record modified by
- * @apiSuccess {Object} Staff Staff's data.
+ * @apiParam {Number} recordId Admin record id (primaryKey)
+ * @apiParam {String} name Admin short name
+ * @apiParam {Number} updated_by Admin record modified by
+ * @apiSuccess {Object} Admin Admin's data.
  * @apiError {Object} 400 Some parameters may contain invalid values.
- * @apiError 404 Staff not found.
+ * @apiError 404 Admin not found.
  * @apiError 401 master access only.
  */
-router.put("/staff/:recordId", [_authorization.checkAuth, _authorization.isValidStaff], _controller.updateRecord);
+router.put("/admin/:recordId", [_authorization.checkAuth, _authorization.isValidAdmin], _controller.updateRecord);
 
 /**
- * @api {delete} /api/staff/{recordId} Delete staff
- * @apiName DeleteStaff
- * @apiGroup Employee
+ * @api {delete} /api/admin/{recordId} Delete admin
+ * @apiName DeleteAdmin
+ * @apiGroup Admin
  * @apiPermission master
  * @apiParam {String} access_token master access token.
  * @apiSuccess (Success 204) 204 No Content.
- * @apiError 404 Staff not found.
+ * @apiError 404 Admin not found.
  * @apiError 401 master access only.
  */
-router.delete("/staff/:recordId", [_authorization.checkAuth, _authorization.isValidStaff], _controller.deleteRecord);
+router.delete("/admin/:recordId", [_authorization.checkAuth, _authorization.isValidAdmin], _controller.deleteRecord);
 
 /**
- * @api {post} /api/staff/login Login Staff
- * @apiName LoginStaff
- * @apiGroup Employee
+ * @api {post} /api/admin/login Login Admin
+ * @apiName LoginAdmin
+ * @apiGroup Admin
  * @apiPermission master
- * @apiParam {String} email Staff email address (optional)
- * @apiParam {String} password Staff password (optional)
- * @apiParam {String} office_phone Staff official phone number (optional)
- * @apiParam {String} otp Staff One-Time-Password sent to phone (optional)
+ * @apiParam {String} email Admin email address (optional)
+ * @apiParam {String} password Admin password (optional)
+ * @apiParam {String} office_phone Admin official phone number (optional)
+ * @apiParam {String} otp Admin One-Time-Password sent to phone (optional)
  * @apiSuccess (Success 200) 200 Login Successful.
- * @apiError 404 Staff not found.
+ * @apiError 404 Admin not found.
  */
-router.post("/staff/login", _controller.login);
+router.post("/admin/login", _controller.login);
 
 exports.default = router;
 //# sourceMappingURL=routes.js.map

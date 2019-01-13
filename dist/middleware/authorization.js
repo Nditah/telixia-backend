@@ -4,7 +4,7 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 exports.checkAuth = checkAuth;
-exports.isValidStaff = isValidStaff;
+exports.isValidAdmin = isValidAdmin;
 exports.isValidTrainee = isValidTrainee;
 exports.isValidCustomer = isValidCustomer;
 
@@ -36,19 +36,19 @@ function checkAuth(req, res, next) {
     });
 }
 
-function isValidStaff(req, res, next) {
+function isValidAdmin(req, res, next) {
     var _req$user = req.user,
         userType = _req$user.userType,
         id = _req$user.id,
         email = _req$user.email;
 
-    if (userType !== "staff") return (0, _response.fail)(res, 403, "Invalid Staff credentials!");
+    if (userType !== "admin") return (0, _response.fail)(res, 403, "Invalid Admin credentials!");
     if (req.method === "POST") {
         req.body.created_by = id;
     } else if (req.method === "PUT") {
         req.body.updated_by = id;
     }
-    console.log("\nValidating Staff: ", userType, id, email);
+    console.log("\nValidating Admin: ", userType, id, email);
     return next();
 }
 

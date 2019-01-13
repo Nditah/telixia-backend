@@ -64,7 +64,7 @@ app.use((error, req, res, next) => {
 
 // listen for requests
 app.listen(port, () => {
-    console.log(`Server is listening on port ${port}`);
+    console.log(`\n=======\nServer is listening on port ${port}`);
 });
 
 pool.query("SELECT 1 + 1 AS solution", (err, result, fields) => {

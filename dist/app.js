@@ -106,7 +106,7 @@ app.use(function (error, req, res, next) {
 
 // listen for requests
 app.listen(port, function () {
-    console.log("Server is listening on port " + port);
+    console.log("\n=======\nServer is listening on port " + port);
 });
 
 _database2.default.query("SELECT 1 + 1 AS solution", function (err, result, fields) {

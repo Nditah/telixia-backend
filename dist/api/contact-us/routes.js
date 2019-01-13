@@ -37,7 +37,7 @@ var router = _express2.default.Router();
  * @author 4Decoder
  * @description ContactUs holds record of all contact-us from clients
  */
-router.get("/contact-us", [_authorization.checkAuth, _authorization.isValidStaff], _controller.fetchRecord);
+router.get("/contact-us", [_authorization.checkAuth, _authorization.isValidAdmin], _controller.fetchRecord);
 
 /**
  * @api {post} /api/contact-us Create contact-us
@@ -60,7 +60,7 @@ router.get("/contact-us", [_authorization.checkAuth, _authorization.isValidStaff
  * @apiError 404 ContactUs not found.
  * @apiError 401 master access only.
  */
-router.post("/contact-us", [_authorization.checkAuth, _authorization.isValidStaff], _controller.createRecord);
+router.post("/contact-us", [_authorization.checkAuth, _authorization.isValidAdmin], _controller.createRecord);
 
 /**
  * @api {put} /api/contact-us/{recordId} Update contact-us
@@ -83,7 +83,7 @@ router.post("/contact-us", [_authorization.checkAuth, _authorization.isValidStaf
  * @apiError 404 ContactUs not found.
  * @apiError 401 master access only.
  */
-router.put("/contact-us/:recordId", [_authorization.checkAuth, _authorization.isValidStaff], _controller.updateRecord);
+router.put("/contact-us/:recordId", [_authorization.checkAuth, _authorization.isValidAdmin], _controller.updateRecord);
 
 /**
  * @api {delete} /api/contact-us/{recordId} Delete contact-us
@@ -95,7 +95,7 @@ router.put("/contact-us/:recordId", [_authorization.checkAuth, _authorization.is
  * @apiError 404 ContactUs not found.
  * @apiError 401 master access only.
  */
-router.delete("/contact-us/:recordId", [_authorization.checkAuth, _authorization.isValidStaff], _controller.deleteRecord);
+router.delete("/contact-us/:recordId", [_authorization.checkAuth, _authorization.isValidAdmin], _controller.deleteRecord);
 
 exports.default = router;
 //# sourceMappingURL=routes.js.map

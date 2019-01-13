@@ -311,7 +311,7 @@ var login = exports.login = function () {
                         return _context5.abrupt("return", (0, _response.fail)(res, 422, "Error validating request data. " + error.message));
 
                     case 3:
-                        return _context5.abrupt("return", (0, _authenticate.staffAuthenticate)(req.body).then(function (token) {
+                        return _context5.abrupt("return", (0, _authenticate.adminAuthenticate)(req.body).then(function (token) {
                             return (0, _response.success)(res, 200, { token: token }, "Login was successful!");
                         }).catch(function (err) {
                             return (0, _response.fail)(res, 500, "Error occurred. " + err.message);
@@ -352,14 +352,14 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, arguments); return new Promise(function (resolve, reject) { function step(key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { return Promise.resolve(value).then(function (value) { step("next", value); }, function (err) { step("throw", err); }); } } return step("next"); }); }; } /**
                                                                                                                                                                                                                                                                                                                                                                                                                                                                             * @author 4Decoder
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                            * @description Staff holds record of all cities with terminals
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                            * @description Admin holds record of all cities with terminals
                                                                                                                                                                                                                                                                                                                                                                                                                                                                             */
 
 
 // Logging
-var logger = _log4js2.default.getLogger("[staff]");
+var logger = _log4js2.default.getLogger("[admin]");
 _log4js2.default.configure({
-    appenders: { file: { type: "file", filename: "logs/staff.log" } },
+    appenders: { file: { type: "file", filename: "logs/admin.log" } },
     categories: { default: { appenders: ["file"], level: "debug" } }
 });
 //# sourceMappingURL=controller.js.map

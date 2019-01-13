@@ -33,7 +33,7 @@ export const schemaUpdate = {
     updated_by: Joi.number().required(),
 };
 
-const schema = {
+export const schema = {
     id: { type: Sequelize.INTEGER(11), primaryKey: true, autoIncrement: true },
     label: { type: Sequelize.STRING, comment: "tag" },
     remark: { type: Sequelize.STRING },

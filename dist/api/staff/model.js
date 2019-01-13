@@ -13,11 +13,11 @@ var _sequelize = require("sequelize");
 
 var Sequelize = _interopRequireWildcard(_sequelize);
 
-var _sequelize2 = require("../config/sequelize");
+var _sequelize2 = require("../../config/sequelize");
 
 var _sequelize3 = _interopRequireDefault(_sequelize2);
 
-var _constants = require("../../../constants");
+var _constants = require("../../constants");
 
 var _table = require("./table");
 
@@ -29,11 +29,11 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 var force = _constants.DATABASE.DROP_TABLE_IF_EXIST.FALSE; /**
                                                             * @author 4Decoder
-                                                            * @property {Integer} id Staff primaryKey
-                                                            * @property {String} name Staff short name
-                                                            * @property {Integer} created_by Staff record created by
-                                                            * @property {Integer} updated_by Staff record modified by
-                                                            * @description Staff holds record of all cities with terminal_list
+                                                            * @property {Integer} id Admin primaryKey
+                                                            * @property {String} name Admin short name
+                                                            * @property {Integer} created_by Admin record created by
+                                                            * @property {Integer} updated_by Admin record modified by
+                                                            * @description Admin holds record of all cities with terminal_list
                                                             */
 var schemaLogin = exports.schemaLogin = {
     email: _joi2.default.string().optional(),
@@ -278,12 +278,12 @@ var options = {
     underscored: true,
     freezeTableName: true
 };
-var Staff = _sequelize3.default.define("staff", schema, options);
+var Admin = _sequelize3.default.define("admin", schema, options);
 _sequelize3.default.sync().then(function () {
-    return Staff.sync({ force: force }).then(function () {
-        return Staff.bulkCreate(_table2.default);
+    return Admin.sync({ force: force }).then(function () {
+        return Admin.bulkCreate(_table2.default);
     });
 });
 
-exports.default = Staff;
+exports.default = Admin;
 //# sourceMappingURL=model.js.map

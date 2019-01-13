@@ -3,7 +3,7 @@
  * @description Client holds record of all clients with terminals
  */
 import express from "express";
-import { checkAuth, isValidStaff } from "../../middleware/authorization";
+import { checkAuth, isValidAdmin } from "../../middleware/authorization";
 import { fetchRecord, createRecord, updateRecord, deleteRecord, login } from "./controller";
 
 const router = express.Router();
@@ -24,7 +24,7 @@ const router = express.Router();
  * @apiSuccess {Object[]} Array of Objects of records.
  * @apiError {Object} 400 Some parameters may contain invalid values.
  */
-router.get("/clients", [checkAuth, isValidStaff], fetchRecord);
+router.get("/clients", [checkAuth, isValidAdmin], fetchRecord);
 
 /**
  * @api {post} /api/clients Create clients
@@ -116,7 +116,7 @@ router.put("/clients/:recordId", [checkAuth], updateRecord);
  * @apiError 404 Client not found.
  * @apiError 401 master access only.
  */
-router.delete("/clients/:recordId", [checkAuth, isValidStaff], deleteRecord);
+router.delete("/clients/:recordId", [checkAuth, isValidAdmin], deleteRecord);
 
 /**
  * @api {post} /api/clients/login Login Client

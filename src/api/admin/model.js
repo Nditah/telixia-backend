@@ -1,16 +1,16 @@
 /**
  * @author 4Decoder
- * @property {Integer} id Staff primaryKey
- * @property {String} name Staff short name
- * @property {Integer} created_by Staff record created by
- * @property {Integer} updated_by Staff record modified by
- * @description Staff holds record of all cities with terminal_list
+ * @property {Integer} id Admin primaryKey
+ * @property {String} name Admin short name
+ * @property {Integer} created_by Admin record created by
+ * @property {Integer} updated_by Admin record modified by
+ * @description Admin holds record of all cities with terminal_list
  */
 import Joi from "joi";
 import * as Sequelize from "sequelize";
-import sequelize from "../config/sequelize";
+import sequelize from "../../config/sequelize";
 import { DATABASE, GENDER, MARITAL_STATUS,
-    EMPLOYMENT_STATUS, SUBSIDIARY } from "../../../constants";
+    EMPLOYMENT_STATUS, SUBSIDIARY } from "../../constants";
 import table from "./table";
     
 const force = DATABASE.DROP_TABLE_IF_EXIST.FALSE;
@@ -167,7 +167,7 @@ export const schemaUpdate = {
     updated_by: Joi.number().required(),
 };
 
-const schema = {
+export const schema = {
     id: { type: Sequelize.INTEGER(11), primaryKey: true, autoIncrement: true },
     serial: { type: Sequelize.STRING },
     category: { type: Sequelize.STRING },
@@ -263,8 +263,8 @@ const options = {
     underscored: true,
     freezeTableName: true,
 };
-const Staff = sequelize.define("staff", schema, options);
+const Admin = sequelize.define("admin", schema, options);
 sequelize.sync()
-    .then(() => Staff.sync({ force }).then(() => Staff.bulkCreate(table)));
+    .then(() => Admin.sync({ force }).then(() => Admin.bulkCreate(table)));
     
-export default Staff;
+export default Admin;

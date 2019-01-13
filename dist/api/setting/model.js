@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
-exports.schemaUpdate = exports.schemaCreate = exports.schemaFetch = undefined;
+exports.schema = exports.schemaUpdate = exports.schemaCreate = exports.schemaFetch = undefined;
 
 var _joi = require("joi");
 
@@ -58,7 +58,7 @@ var schemaUpdate = exports.schemaUpdate = {
     updated_by: _joi2.default.number().required()
 };
 
-var schema = {
+var schema = exports.schema = {
     id: { type: Sequelize.INTEGER(11), primaryKey: true, autoIncrement: true },
     name: { type: Sequelize.STRING, allowNull: false },
     value: { type: Sequelize.STRING, allowNull: false },

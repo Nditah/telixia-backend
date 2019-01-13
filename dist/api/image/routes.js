@@ -61,7 +61,7 @@ router.get("/images", _controller.fetchRecord);
  * on the backend server. This is only a fall back option when AWS is
  * no longer available.
  */
-router.post("/images", [_authorization.checkAuth, _authorization.isValidStaff], _controller.createRecord);
+router.post("/images", [_authorization.checkAuth, _authorization.isValidAdmin], _controller.createRecord);
 
 /**
  * @api {post} /api/images-aws Create image-assets
@@ -74,7 +74,7 @@ router.post("/images", [_authorization.checkAuth, _authorization.isValidStaff], 
  * @apiError {Object} 400 Some parameters may contain invalid values.
  * @apiDescription Images uploaded to this endpoint are stored on AWS.
  */
-router.post("/images-aws", [_authorization.checkAuth, _authorization.isValidStaff], _controller.addImageAws);
+router.post("/images-aws", [_authorization.checkAuth, _authorization.isValidAdmin], _controller.addImageAws);
 
 /**
  * @api {put} /api/images/{ImageId} Update image-assets
@@ -85,7 +85,7 @@ router.post("/images-aws", [_authorization.checkAuth, _authorization.isValidStaf
  * @apiParam {String} url required image-asset url on cloud
  * @apiError {Object} 400 Some parameters may contain invalid values.
  */
-router.put("/images/:recordId", [_authorization.checkAuth, _authorization.isValidStaff], _controller.updateRecord);
+router.put("/images/:recordId", [_authorization.checkAuth, _authorization.isValidAdmin], _controller.updateRecord);
 
 /**
  * @api {delete} /api/images/{recordId} Delete image-assets
@@ -95,7 +95,7 @@ router.put("/images/:recordId", [_authorization.checkAuth, _authorization.isVali
  * @apiSuccess (Success 204) 204 No Content.
  * @apiError 404 image-asset not found.
  */
-router.delete("/images/:recordId", [_authorization.checkAuth, _authorization.isValidStaff], _controller.deleteRecord);
+router.delete("/images/:recordId", [_authorization.checkAuth, _authorization.isValidAdmin], _controller.deleteRecord);
 
 exports.default = router;
 //# sourceMappingURL=routes.js.map

@@ -3,7 +3,7 @@
  * @description Setting holds record of all settings with terminals
  */
 import express from "express";
-import { checkAuth, isValidStaff } from "../../middleware/authorization";
+import { checkAuth, isValidAdmin } from "../../middleware/authorization";
 import { fetchRecord, createRecord, updateRecord, deleteRecord } from "./controller";
 
 const router = express.Router();
@@ -42,7 +42,7 @@ router.get("/settings", fetchRecord);
  * @apiError 404 Setting not found.
  * @apiError 401 master access only.
  */
-router.post("/settings", [checkAuth, isValidStaff], createRecord);
+router.post("/settings", [checkAuth, isValidAdmin], createRecord);
 
 /**
  * @api {put} /api/settings/{recordId} Update settings
@@ -61,7 +61,7 @@ router.post("/settings", [checkAuth, isValidStaff], createRecord);
  * @apiError 404 Setting not found.
  * @apiError 401 master access only.
  */
-router.put("/settings/:recordId", [checkAuth, isValidStaff], updateRecord);
+router.put("/settings/:recordId", [checkAuth, isValidAdmin], updateRecord);
 
 /**
  * @api {delete} /api/settings/{recordId} Delete settings
@@ -73,6 +73,6 @@ router.put("/settings/:recordId", [checkAuth, isValidStaff], updateRecord);
  * @apiError 404 Setting not found.
  * @apiError 401 master access only.
  */
-router.delete("/settings/:recordId", [checkAuth, isValidStaff], deleteRecord);
+router.delete("/settings/:recordId", [checkAuth, isValidAdmin], deleteRecord);
 
 export default router;

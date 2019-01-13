@@ -5,7 +5,7 @@
 
 import express from "express";
 import appRoot from "app-root-path";
-import { checkAuth, isValidStaff } from "../../middleware/authorization";
+import { checkAuth, isValidAdmin } from "../../middleware/authorization";
 import { addImageAws, createRecord, fetchRecord, updateRecord, deleteRecord } from "./controller";
 
 const router = express.Router();
@@ -46,7 +46,7 @@ router.get("/images", fetchRecord);
  * on the backend server. This is only a fall back option when AWS is
  * no longer available.
  */
-router.post("/images", [checkAuth, isValidStaff], createRecord);
+router.post("/images", [checkAuth, isValidAdmin], createRecord);
 
 /**
  * @api {post} /api/images-aws Create image-assets
@@ -59,7 +59,7 @@ router.post("/images", [checkAuth, isValidStaff], createRecord);
  * @apiError {Object} 400 Some parameters may contain invalid values.
  * @apiDescription Images uploaded to this endpoint are stored on AWS.
  */
-router.post("/images-aws", [checkAuth, isValidStaff], addImageAws);
+router.post("/images-aws", [checkAuth, isValidAdmin], addImageAws);
 
 /**
  * @api {put} /api/images/{ImageId} Update image-assets
@@ -70,7 +70,7 @@ router.post("/images-aws", [checkAuth, isValidStaff], addImageAws);
  * @apiParam {String} url required image-asset url on cloud
  * @apiError {Object} 400 Some parameters may contain invalid values.
  */
-router.put("/images/:recordId", [checkAuth, isValidStaff], updateRecord);
+router.put("/images/:recordId", [checkAuth, isValidAdmin], updateRecord);
 
 /**
  * @api {delete} /api/images/{recordId} Delete image-assets
@@ -80,6 +80,6 @@ router.put("/images/:recordId", [checkAuth, isValidStaff], updateRecord);
  * @apiSuccess (Success 204) 204 No Content.
  * @apiError 404 image-asset not found.
  */
-router.delete("/images/:recordId", [checkAuth, isValidStaff], deleteRecord);
+router.delete("/images/:recordId", [checkAuth, isValidAdmin], deleteRecord);
 
 export default router;

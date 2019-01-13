@@ -23,15 +23,15 @@ export function checkAuth(req, res, next) {
     });
 }
 
-export function isValidStaff(req, res, next) {
+export function isValidAdmin(req, res, next) {
     const { userType, id, email } = req.user;
-    if (userType !== "staff") return fail(res, 403, "Invalid Staff credentials!");
+    if (userType !== "admin") return fail(res, 403, "Invalid Admin credentials!");
     if (req.method === "POST") {
         req.body.created_by = id;
     } else if (req.method === "PUT") {
         req.body.updated_by = id;
     }
-    console.log("\nValidating Staff: ", userType, id, email);
+    console.log("\nValidating Admin: ", userType, id, email);
     return next();
 }
 

@@ -3,7 +3,7 @@
  * @description Talent holds record of all talents with terminals
  */
 import express from "express";
-import { checkAuth, isValidStaff } from "../../middleware/authorization";
+import { checkAuth, isValidAdmin } from "../../middleware/authorization";
 import { fetchRecord, createRecord, updateRecord, deleteRecord, login } from "./controller";
 
 const router = express.Router();
@@ -24,7 +24,7 @@ const router = express.Router();
  * @apiSuccess {Object[]} Array of Objects of records.
  * @apiError {Object} 400 Some parameters may contain invalid values.
  */
-router.get("/talents", [checkAuth, isValidStaff], fetchRecord);
+router.get("/talents", [checkAuth, isValidAdmin], fetchRecord);
 
 /**
  * @api {post} /api/talents Create talents
@@ -116,7 +116,7 @@ router.put("/talents/:recordId", [checkAuth], updateRecord);
  * @apiError 404 Talent not found.
  * @apiError 401 master access only.
  */
-router.delete("/talents/:recordId", [checkAuth, isValidStaff], deleteRecord);
+router.delete("/talents/:recordId", [checkAuth, isValidAdmin], deleteRecord);
 
 /**
  * @api {post} /api/talents/login Login Talent

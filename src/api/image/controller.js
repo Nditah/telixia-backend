@@ -5,7 +5,7 @@ import multer from "multer";
 import multerS3 from "multer-s3";
 import appRoot from "app-root-path";
 import dotenv from "dotenv";
-import Image, { schemaFetch, schemaCreate, schemaUpdate } from "./model";
+import Image, { schema, schemaFetch, schemaCreate, schemaUpdate } from "./model";
 import { success, fail, notFound } from "../../lib/response";
 import { STATUS_MSG } from "../../constants";
 

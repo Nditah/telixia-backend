@@ -3,7 +3,7 @@
  * @description Invoice holds record of all invoices involving company vehicles
  */
 import express from "express";
-import { checkAuth, isValidStaff } from "../../middleware/authorization";
+import { checkAuth, isValidAdmin } from "../../middleware/authorization";
 import { fetchRecord, createRecord, updateRecord, deleteRecord } from "./controller";
 
 const router = express.Router();
@@ -24,7 +24,7 @@ const router = express.Router();
  * @apiSuccess {Object[]} Array of Objects of records.
  * @apiError {Object} 400 Some parameters may contain invalid values.
  */
-router.get("/invoices", [checkAuth, isValidStaff], fetchRecord);
+router.get("/invoices", [checkAuth, isValidAdmin], fetchRecord);
 
 /**
  * @api {post} /api/invoices Create invoices
@@ -38,7 +38,7 @@ router.get("/invoices", [checkAuth, isValidStaff], fetchRecord);
  * @apiError 404 Invoice not found.
  * @apiError 401 master access only.
  */
-router.post("/invoices", [checkAuth, isValidStaff], createRecord);
+router.post("/invoices", [checkAuth, isValidAdmin], createRecord);
 
 /**
  * @api {put} /api/invoices/{recordId} Update invoices
@@ -53,7 +53,7 @@ router.post("/invoices", [checkAuth, isValidStaff], createRecord);
  * @apiError 404 Invoice not found.
  * @apiError 401 master access only.
  */
-router.put("/invoices/:recordId", [checkAuth, isValidStaff], updateRecord);
+router.put("/invoices/:recordId", [checkAuth, isValidAdmin], updateRecord);
 
 /**
  * @api {delete} /api/invoices/{recordId} Delete invoices
@@ -65,6 +65,6 @@ router.put("/invoices/:recordId", [checkAuth, isValidStaff], updateRecord);
  * @apiError 404 Invoice not found.
  * @apiError 401 master access only.
  */
-router.delete("/invoices/:recordId", [checkAuth, isValidStaff], deleteRecord);
+router.delete("/invoices/:recordId", [checkAuth, isValidAdmin], deleteRecord);
 
 export default router;

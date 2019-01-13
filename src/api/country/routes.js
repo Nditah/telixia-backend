@@ -3,7 +3,7 @@
  * @description Country holds record of all countries with terminals
  */
 import express from "express";
-import { checkAuth, isValidStaff } from "../../middleware/authorization";
+import { checkAuth, isValidAdmin } from "../../middleware/authorization";
 import { fetchRecord, createRecord, updateRecord, deleteRecord } from "./controller";
 
 const router = express.Router();
@@ -46,7 +46,7 @@ router.get("/countries", fetchRecord);
  * @apiError 404 Country not found.
  * @apiError 401 master access only.
  */
-router.post("/countries", [checkAuth, isValidStaff], createRecord);
+router.post("/countries", [checkAuth, isValidAdmin], createRecord);
 
 /**
  * @api {put} /api/countries/{recordId} Update countries
@@ -69,7 +69,7 @@ router.post("/countries", [checkAuth, isValidStaff], createRecord);
  * @apiError 404 Country not found.
  * @apiError 401 master access only.
  */
-router.put("/countries/:recordId", [checkAuth, isValidStaff], updateRecord);
+router.put("/countries/:recordId", [checkAuth, isValidAdmin], updateRecord);
 
 /**
  * @api {delete} /api/countries/{recordId} Delete countries
@@ -81,6 +81,6 @@ router.put("/countries/:recordId", [checkAuth, isValidStaff], updateRecord);
  * @apiError 404 Country not found.
  * @apiError 401 master access only.
  */
-router.delete("/countries/:recordId", [checkAuth, isValidStaff], deleteRecord);
+router.delete("/countries/:recordId", [checkAuth, isValidAdmin], deleteRecord);
 
 export default router;

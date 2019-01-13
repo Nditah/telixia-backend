@@ -3,7 +3,7 @@
  * @description ContactUs holds record of all contact-us from clients
  */
 import express from "express";
-import { checkAuth, isValidStaff } from "../../middleware/authorization";
+import { checkAuth, isValidAdmin } from "../../middleware/authorization";
 import { fetchRecord, createRecord, updateRecord, deleteRecord } from "./controller";
 
 const router = express.Router();
@@ -25,7 +25,7 @@ const router = express.Router();
  * @apiSuccess {Object[]} Array of Objects of records.
  * @apiError {Object} 400 Some parameters may contain invalid values.
  */
-router.get("/contact-us", [checkAuth, isValidStaff], fetchRecord);
+router.get("/contact-us", [checkAuth, isValidAdmin], fetchRecord);
 
 /**
  * @api {post} /api/contact-us Create contact-us
@@ -48,7 +48,7 @@ router.get("/contact-us", [checkAuth, isValidStaff], fetchRecord);
  * @apiError 404 ContactUs not found.
  * @apiError 401 master access only.
  */
-router.post("/contact-us", [checkAuth, isValidStaff], createRecord);
+router.post("/contact-us", [checkAuth, isValidAdmin], createRecord);
 
 /**
  * @api {put} /api/contact-us/{recordId} Update contact-us
@@ -71,7 +71,7 @@ router.post("/contact-us", [checkAuth, isValidStaff], createRecord);
  * @apiError 404 ContactUs not found.
  * @apiError 401 master access only.
  */
-router.put("/contact-us/:recordId", [checkAuth, isValidStaff], updateRecord);
+router.put("/contact-us/:recordId", [checkAuth, isValidAdmin], updateRecord);
 
 /**
  * @api {delete} /api/contact-us/{recordId} Delete contact-us
@@ -83,6 +83,6 @@ router.put("/contact-us/:recordId", [checkAuth, isValidStaff], updateRecord);
  * @apiError 404 ContactUs not found.
  * @apiError 401 master access only.
  */
-router.delete("/contact-us/:recordId", [checkAuth, isValidStaff], deleteRecord);
+router.delete("/contact-us/:recordId", [checkAuth, isValidAdmin], deleteRecord);
 
 export default router;

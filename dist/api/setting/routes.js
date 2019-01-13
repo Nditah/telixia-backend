@@ -54,7 +54,7 @@ router.get("/settings", _controller.fetchRecord);
  * @apiError 404 Setting not found.
  * @apiError 401 master access only.
  */
-router.post("/settings", [_authorization.checkAuth, _authorization.isValidStaff], _controller.createRecord);
+router.post("/settings", [_authorization.checkAuth, _authorization.isValidAdmin], _controller.createRecord);
 
 /**
  * @api {put} /api/settings/{recordId} Update settings
@@ -73,7 +73,7 @@ router.post("/settings", [_authorization.checkAuth, _authorization.isValidStaff]
  * @apiError 404 Setting not found.
  * @apiError 401 master access only.
  */
-router.put("/settings/:recordId", [_authorization.checkAuth, _authorization.isValidStaff], _controller.updateRecord);
+router.put("/settings/:recordId", [_authorization.checkAuth, _authorization.isValidAdmin], _controller.updateRecord);
 
 /**
  * @api {delete} /api/settings/{recordId} Delete settings
@@ -85,7 +85,7 @@ router.put("/settings/:recordId", [_authorization.checkAuth, _authorization.isVa
  * @apiError 404 Setting not found.
  * @apiError 401 master access only.
  */
-router.delete("/settings/:recordId", [_authorization.checkAuth, _authorization.isValidStaff], _controller.deleteRecord);
+router.delete("/settings/:recordId", [_authorization.checkAuth, _authorization.isValidAdmin], _controller.deleteRecord);
 
 exports.default = router;
 //# sourceMappingURL=routes.js.map
