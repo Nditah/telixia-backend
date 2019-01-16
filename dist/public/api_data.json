@@ -1,8 +1,8 @@
 [
   {
     "type": "post",
-    "url": "/api/admin",
-    "title": "Create admin",
+    "url": "/api/admins",
+    "title": "Create admins",
     "name": "CreateAdmin",
     "group": "Admin",
     "parameter": {
@@ -17,17 +17,248 @@
           },
           {
             "group": "Parameter",
-            "type": "Integer",
+            "type": "String",
             "optional": false,
-            "field": "id",
-            "description": "<p>Admin primaryKey</p>"
+            "field": "title",
+            "description": "<p>Admin title (optional)</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "surname",
+            "description": "<p>Admin  surname (required)</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "other_name",
+            "description": "<p>Admin  other_name (required)</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "gender",
+            "description": "<p>Admin  gender (required)</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Date",
+            "optional": false,
+            "field": "birth_date",
+            "description": "<p>Admin  birth_date (required)</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "marital_status",
+            "description": "<p>Admin  marital_status (required)</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "phone_office",
+            "description": "<p>Admin  phone_office (required)</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "phone_personal",
+            "description": "<p>Admin  phone_personal (required)</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "address",
+            "description": "<p>Admin  address (required)</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "country_iso2",
+            "description": "<p>Admin  country_iso2 (required)</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "email",
+            "description": "<p>Admin  email (required)</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "password",
+            "description": "<p>Admin  password (required)</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "otp",
+            "description": "<p>Admin  otp (required)</p>"
           },
           {
             "group": "Parameter",
             "type": "Integer",
             "optional": false,
-            "field": "created_by",
-            "description": "<p>Admin record created by</p>"
+            "field": "otp_count",
+            "description": "<p>Admin  otp_count (required)</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "kin",
+            "description": "<p>Admin  kin (required)</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "kin_phone",
+            "description": "<p>Admin  kin_phone (required)</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "kin_address",
+            "description": "<p>Admin  kin_address (required)</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "job_responsibility",
+            "description": "<p>Admin  job_responsibility (required)</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "job_title",
+            "description": "<p>Admin  job_title (required)</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "highest_qualification",
+            "description": "<p>Admin  highest_qualification (optional)</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "highest_institution",
+            "description": "<p>Admin  highest_institution (optional)</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "employment_status",
+            "description": "<p>Admin  employment_status (required)</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Date",
+            "optional": false,
+            "field": "employment_date",
+            "description": "<p>Admin  employment_date (required)</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Integer",
+            "optional": false,
+            "field": "monthly_tax",
+            "description": "<p>Admin  monthly_tax (optional)</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Integer",
+            "optional": false,
+            "field": "monthly_salary",
+            "description": "<p>Admin  monthly_salary (required)</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Integer",
+            "optional": false,
+            "field": "bank_id",
+            "description": "<p>Admin  bank_id (required)</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "bank_account_number",
+            "description": "<p>Admin  bank_account_number (required)</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "bank_account_name",
+            "description": "<p>Admin  bank_account_name (required)</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Boolean",
+            "optional": false,
+            "field": "is_salary_payable",
+            "description": "<p>Admin  is_salary_payable (optional)</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Boolean",
+            "optional": false,
+            "field": "is_document_complete",
+            "description": "<p>Admin  is_document_complete (optional)</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Integer",
+            "optional": false,
+            "field": "superior_id",
+            "description": "<p>Admin  superior_id (optional)</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "remark",
+            "description": "<p>Admin  remark (optional)</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "photo",
+            "description": "<p>Admin  photo (optional)</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Date",
+            "optional": false,
+            "field": "last_login_date",
+            "description": "<p>Admin  last_login_date (optional)</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "last_login_ip",
+            "description": "<p>Admin  last_login_ip (optional)</p>"
           }
         ]
       }
@@ -71,13 +302,13 @@
       }
     },
     "version": "0.0.0",
-    "filename": "src/api/staff/routes.js",
+    "filename": "src/api/admin/routes.js",
     "groupTitle": "Admin"
   },
   {
     "type": "delete",
-    "url": "/api/admin/{recordId}",
-    "title": "Delete admin",
+    "url": "/api/admins/{recordId}",
+    "title": "Delete admins",
     "name": "DeleteAdmin",
     "group": "Admin",
     "permission": [
@@ -129,12 +360,12 @@
       }
     },
     "version": "0.0.0",
-    "filename": "src/api/staff/routes.js",
+    "filename": "src/api/admin/routes.js",
     "groupTitle": "Admin"
   },
   {
     "type": "post",
-    "url": "/api/admin/login",
+    "url": "/api/admins/login",
     "title": "Login Admin",
     "name": "LoginAdmin",
     "group": "Admin",
@@ -202,24 +433,24 @@
       }
     },
     "version": "0.0.0",
-    "filename": "src/api/staff/routes.js",
+    "filename": "src/api/admin/routes.js",
     "groupTitle": "Admin"
   },
   {
     "type": "get",
-    "url": "/api/admin?id={recordId}",
+    "url": "/api/admins?id={recordId}",
     "title": "Retrieve one or all records",
     "name": "RetrieveAdmin",
     "group": "Admin",
     "examples": [
       {
         "title": "Example usage for retieving a single record:",
-        "content": "curl -i http://localhost/api/admin?id=2&fields=id,created_at,updated_at",
+        "content": "curl -i http://localhost/api/admins?id=2&fields=id,created_at,updated_at",
         "type": "curl"
       },
       {
         "title": "Example usage for retieving multiple records:",
-        "content": "curl -i http://localhost/api/admin?offset=10&limit=50",
+        "content": "curl -i http://localhost/api/admins?offset=10&limit=50",
         "type": "curl"
       }
     ],
@@ -257,7 +488,7 @@
         ]
       }
     },
-    "description": "<p>Records of admin distributed across terminals.</p>",
+    "description": "<p>Records of admins distributed across terminals.</p>",
     "success": {
       "fields": {
         "Success 200": [
@@ -285,13 +516,13 @@
       }
     },
     "version": "0.0.0",
-    "filename": "src/api/staff/routes.js",
+    "filename": "src/api/admin/routes.js",
     "groupTitle": "Admin"
   },
   {
     "type": "put",
-    "url": "/api/admin/{recordId}",
-    "title": "Update admin",
+    "url": "/api/admins/{recordId}",
+    "title": "Update admins",
     "name": "UpdateAdmin",
     "group": "Admin",
     "permission": [
@@ -320,15 +551,246 @@
             "group": "Parameter",
             "type": "String",
             "optional": false,
-            "field": "name",
-            "description": "<p>Admin short name</p>"
+            "field": "title",
+            "description": "<p>Admin title (optional)</p>"
           },
           {
             "group": "Parameter",
-            "type": "Number",
+            "type": "String",
             "optional": false,
-            "field": "updated_by",
-            "description": "<p>Admin record modified by</p>"
+            "field": "surname",
+            "description": "<p>Admin  surname (optional)</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "other_name",
+            "description": "<p>Admin  other_name (optional)</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "gender",
+            "description": "<p>Admin  gender (optional)</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Date",
+            "optional": false,
+            "field": "birth_date",
+            "description": "<p>Admin  birth_date (optional)</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "marital_status",
+            "description": "<p>Admin  marital_status (optional)</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "phone_office",
+            "description": "<p>Admin  phone_office (optional)</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "phone_personal",
+            "description": "<p>Admin  phone_personal (optional)</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "address",
+            "description": "<p>Admin  address (optional)</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "country_iso2",
+            "description": "<p>Admin  country_iso2 (optional)</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "email",
+            "description": "<p>Admin  email (optional)</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "password",
+            "description": "<p>Admin  password (optional)</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "otp",
+            "description": "<p>Admin  otp (optional)</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Integer",
+            "optional": false,
+            "field": "otp_count",
+            "description": "<p>Admin  otp_count (optional)</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "kin",
+            "description": "<p>Admin  kin (optional)</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "kin_phone",
+            "description": "<p>Admin  kin_phone (optional)</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "kin_address",
+            "description": "<p>Admin  kin_address (optional)</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "job_responsibility",
+            "description": "<p>Admin  job_responsibility (optional)</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "job_title",
+            "description": "<p>Admin  job_title (optional)</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "highest_qualification",
+            "description": "<p>Admin  highest_qualification (optional)</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "highest_institution",
+            "description": "<p>Admin  highest_institution (optional)</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "employment_status",
+            "description": "<p>Admin  employment_status (optional)</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Date",
+            "optional": false,
+            "field": "employment_date",
+            "description": "<p>Admin  employment_date (optional)</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Integer",
+            "optional": false,
+            "field": "monthly_tax",
+            "description": "<p>Admin  monthly_tax (optional)</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Integer",
+            "optional": false,
+            "field": "monthly_salary",
+            "description": "<p>Admin  monthly_salary (optional)</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Integer",
+            "optional": false,
+            "field": "bank_id",
+            "description": "<p>Admin  bank_id (optional)</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "bank_account_number",
+            "description": "<p>Admin  bank_account_number (optional)</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "bank_account_name",
+            "description": "<p>Admin  bank_account_name (optional)</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Boolean",
+            "optional": false,
+            "field": "is_salary_payable",
+            "description": "<p>Admin  is_salary_payable (optional)</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Boolean",
+            "optional": false,
+            "field": "is_document_complete",
+            "description": "<p>Admin  is_document_complete (optional)</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Integer",
+            "optional": false,
+            "field": "superior_id",
+            "description": "<p>Admin  superior_id (optional)</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "remark",
+            "description": "<p>Admin  remark (optional)</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "photo",
+            "description": "<p>Admin  photo (optional)</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Date",
+            "optional": false,
+            "field": "last_login_date",
+            "description": "<p>Admin  last_login_date (optional)</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "last_login_ip",
+            "description": "<p>Admin  last_login_ip (optional)</p>"
           }
         ]
       }
@@ -372,8 +834,360 @@
       }
     },
     "version": "0.0.0",
-    "filename": "src/api/staff/routes.js",
+    "filename": "src/api/admin/routes.js",
     "groupTitle": "Admin"
+  },
+  {
+    "type": "post",
+    "url": "/api/banks",
+    "title": "Create banks",
+    "name": "CreateBank",
+    "group": "Bank",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "access_token",
+            "description": "<p>master access token.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "name",
+            "description": "<p>Bank full name (required)</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "sort_code",
+            "description": "<p>Bank sort_code (required)</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "bank_code",
+            "description": "<p>Bank bank_code (required)</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "country_iso2",
+            "description": "<p>Bank country_iso2 (optional)</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "contact_person",
+            "description": "<p>Bank contact_person (optional)</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "website",
+            "description": "<p>Bank website (optional)</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Object",
+            "optional": false,
+            "field": "Bank",
+            "description": "<p>Bank's data.</p>"
+          }
+        ]
+      }
+    },
+    "error": {
+      "fields": {
+        "Error 4xx": [
+          {
+            "group": "Error 4xx",
+            "type": "Object",
+            "optional": false,
+            "field": "400",
+            "description": "<p>Some parameters may contain invalid values.</p>"
+          },
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "404",
+            "description": "<p>Bank not found.</p>"
+          },
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "401",
+            "description": "<p>master access only.</p>"
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "src/api/bank/routes.js",
+    "groupTitle": "Bank"
+  },
+  {
+    "type": "delete",
+    "url": "/api/banks/{recordId}",
+    "title": "Delete banks",
+    "name": "DeleteBank",
+    "group": "Bank",
+    "permission": [
+      {
+        "name": "master"
+      }
+    ],
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "access_token",
+            "description": "<p>master access token.</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 204": [
+          {
+            "group": "Success 204",
+            "optional": false,
+            "field": "204",
+            "description": "<p>No Content.</p>"
+          }
+        ]
+      }
+    },
+    "error": {
+      "fields": {
+        "Error 4xx": [
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "404",
+            "description": "<p>Bank not found.</p>"
+          },
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "401",
+            "description": "<p>master access only.</p>"
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "src/api/bank/routes.js",
+    "groupTitle": "Bank"
+  },
+  {
+    "type": "get",
+    "url": "/api/banks?id={recordId}",
+    "title": "Retrieve one or all records",
+    "name": "RetrieveBank",
+    "group": "Bank",
+    "examples": [
+      {
+        "title": "Example usage for retieving a single record:",
+        "content": "curl -i http://localhost/api/banks?id=2&fields=id,created_at,updated_at",
+        "type": "curl"
+      },
+      {
+        "title": "Example usage for retieving multiple records:",
+        "content": "curl -i http://localhost/api/banks?offset=10&limit=50",
+        "type": "curl"
+      }
+    ],
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "id",
+            "description": "<p>Unique id of the record to retrieve (optional)</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "offset",
+            "description": "<p>Number of records to skip (optional)</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "limit",
+            "description": "<p>Maximum Number of records to retrieve (optional)</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "fields",
+            "description": "<p>Comma-separated list of record's attributes to retrieve (optional)</p>"
+          }
+        ]
+      }
+    },
+    "description": "<p>Records  of Corporate commercial banks operating Groups bank account(s)</p>",
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Object[]",
+            "optional": false,
+            "field": "Array",
+            "description": "<p>of Objects of records.</p>"
+          }
+        ]
+      }
+    },
+    "error": {
+      "fields": {
+        "Error 4xx": [
+          {
+            "group": "Error 4xx",
+            "type": "Object",
+            "optional": false,
+            "field": "400",
+            "description": "<p>Some parameters may contain invalid values.</p>"
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "src/api/bank/routes.js",
+    "groupTitle": "Bank"
+  },
+  {
+    "type": "put",
+    "url": "/api/banks/{recordId}",
+    "title": "Update banks",
+    "name": "UpdateBank",
+    "group": "Bank",
+    "permission": [
+      {
+        "name": "master"
+      }
+    ],
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "access_token",
+            "description": "<p>master access token.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "name",
+            "description": "<p>Bank full name (required)</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "sort_code",
+            "description": "<p>Bank sort_code (required)</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "bank_code",
+            "description": "<p>Bank bank_code (required)</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "country_iso2",
+            "description": "<p>Bank country_iso2 (optional)</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "contact_person",
+            "description": "<p>Bank contact_person (optional)</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "website",
+            "description": "<p>Bank website (optional)</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Object",
+            "optional": false,
+            "field": "Bank",
+            "description": "<p>Bank's data.</p>"
+          }
+        ]
+      }
+    },
+    "error": {
+      "fields": {
+        "Error 4xx": [
+          {
+            "group": "Error 4xx",
+            "type": "Object",
+            "optional": false,
+            "field": "400",
+            "description": "<p>Some parameters may contain invalid values.</p>"
+          },
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "404",
+            "description": "<p>Bank not found.</p>"
+          },
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "401",
+            "description": "<p>master access only.</p>"
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "src/api/bank/routes.js",
+    "groupTitle": "Bank"
   },
   {
     "type": "post",
@@ -432,13 +1246,6 @@
             "optional": false,
             "field": "gender",
             "description": "<p>Client gender (required)</p>"
-          },
-          {
-            "group": "Parameter",
-            "type": "Date",
-            "optional": false,
-            "field": "birth_date",
-            "description": "<p>Client date of birth</p>"
           },
           {
             "group": "Parameter",
@@ -512,38 +1319,10 @@
           },
           {
             "group": "Parameter",
-            "type": "Boolean",
+            "type": "String",
             "optional": false,
-            "field": "is_pmt_client",
-            "description": "<p>assert that client is also a PMT client</p>"
-          },
-          {
-            "group": "Parameter",
-            "type": "Boolean",
-            "optional": false,
-            "field": "is_pesl_client",
-            "description": "<p>assert that client is also a PESL client</p>"
-          },
-          {
-            "group": "Parameter",
-            "type": "Boolean",
-            "optional": false,
-            "field": "is_pet_client",
-            "description": "<p>assert that client is also a PET client</p>"
-          },
-          {
-            "group": "Parameter",
-            "type": "Boolean",
-            "optional": false,
-            "field": "is_shop_client",
-            "description": "<p>assert that client is also a SHOP client</p>"
-          },
-          {
-            "group": "Parameter",
-            "type": "Boolean",
-            "optional": false,
-            "field": "is_tenant",
-            "description": "<p>assert if client is a depot tenant</p>"
+            "field": "services",
+            "description": "<p>Client rendred to the client</p>"
           },
           {
             "group": "Parameter",
@@ -904,13 +1683,6 @@
           },
           {
             "group": "Parameter",
-            "type": "Date",
-            "optional": false,
-            "field": "birth_date",
-            "description": "<p>Client date of birth</p>"
-          },
-          {
-            "group": "Parameter",
             "type": "String",
             "optional": false,
             "field": "phone",
@@ -981,38 +1753,10 @@
           },
           {
             "group": "Parameter",
-            "type": "Boolean",
+            "type": "String",
             "optional": false,
-            "field": "is_pmt_client",
-            "description": "<p>assert that client is also a PMT client</p>"
-          },
-          {
-            "group": "Parameter",
-            "type": "Boolean",
-            "optional": false,
-            "field": "is_pesl_client",
-            "description": "<p>assert that client is also a PESL client</p>"
-          },
-          {
-            "group": "Parameter",
-            "type": "Boolean",
-            "optional": false,
-            "field": "is_pet_client",
-            "description": "<p>assert that client is also a PET client</p>"
-          },
-          {
-            "group": "Parameter",
-            "type": "Boolean",
-            "optional": false,
-            "field": "is_shop_client",
-            "description": "<p>assert that client is also a SHOP client</p>"
-          },
-          {
-            "group": "Parameter",
-            "type": "Boolean",
-            "optional": false,
-            "field": "is_tenant",
-            "description": "<p>assert if client is a depot tenant</p>"
+            "field": "services",
+            "description": "<p>Client rendred to the client</p>"
           },
           {
             "group": "Parameter",
@@ -1891,6 +2635,42 @@
   },
   {
     "type": "post",
+    "url": "/api/flutterwave/webhook",
+    "title": "flutterwave webhook",
+    "name": "RetrieveFlutterwave",
+    "group": "Flutterwave",
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Object[]",
+            "optional": false,
+            "field": "Array",
+            "description": "<p>of Objects of records.</p>"
+          }
+        ]
+      }
+    },
+    "error": {
+      "fields": {
+        "Error 4xx": [
+          {
+            "group": "Error 4xx",
+            "type": "Object",
+            "optional": false,
+            "field": "400",
+            "description": "<p>Some parameters may contain invalid values.</p>"
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "src/api/invoice/routes.js",
+    "groupTitle": "Flutterwave"
+  },
+  {
+    "type": "post",
     "url": "/api/images",
     "title": "Create image-assets",
     "name": "CreateImage",
@@ -2491,6 +3271,330 @@
   },
   {
     "type": "post",
+    "url": "/api/packages",
+    "title": "Create packages",
+    "name": "CreatePackage",
+    "group": "Package",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "access_token",
+            "description": "<p>master access token.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "name",
+            "description": "<p>Package full name (required)</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "description",
+            "description": "<p>Package description (required)</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "duration",
+            "description": "<p>Package duration (required)</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "cost",
+            "description": "<p>Package cost (required)</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Object",
+            "optional": false,
+            "field": "Package",
+            "description": "<p>Package's data.</p>"
+          }
+        ]
+      }
+    },
+    "error": {
+      "fields": {
+        "Error 4xx": [
+          {
+            "group": "Error 4xx",
+            "type": "Object",
+            "optional": false,
+            "field": "400",
+            "description": "<p>Some parameters may contain invalid values.</p>"
+          },
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "404",
+            "description": "<p>Package not found.</p>"
+          },
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "401",
+            "description": "<p>master access only.</p>"
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "src/api/package/routes.js",
+    "groupTitle": "Package"
+  },
+  {
+    "type": "delete",
+    "url": "/api/packages/{recordId}",
+    "title": "Delete packages",
+    "name": "DeletePackage",
+    "group": "Package",
+    "permission": [
+      {
+        "name": "master"
+      }
+    ],
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "access_token",
+            "description": "<p>master access token.</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 204": [
+          {
+            "group": "Success 204",
+            "optional": false,
+            "field": "204",
+            "description": "<p>No Content.</p>"
+          }
+        ]
+      }
+    },
+    "error": {
+      "fields": {
+        "Error 4xx": [
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "404",
+            "description": "<p>Package not found.</p>"
+          },
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "401",
+            "description": "<p>master access only.</p>"
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "src/api/package/routes.js",
+    "groupTitle": "Package"
+  },
+  {
+    "type": "get",
+    "url": "/api/packages?id={recordId}",
+    "title": "Retrieve one or all records",
+    "name": "RetrievePackage",
+    "group": "Package",
+    "examples": [
+      {
+        "title": "Example usage for retieving a single record:",
+        "content": "curl -i http://localhost/api/packages?id=2&fields=id,created_at,updated_at",
+        "type": "curl"
+      },
+      {
+        "title": "Example usage for retieving multiple records:",
+        "content": "curl -i http://localhost/api/packages?offset=10&limit=50",
+        "type": "curl"
+      }
+    ],
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "id",
+            "description": "<p>Unique id of the record to retrieve (optional)</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "offset",
+            "description": "<p>Number of records to skip (optional)</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "limit",
+            "description": "<p>Maximum Number of records to retrieve (optional)</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "fields",
+            "description": "<p>Comma-separated list of record's attributes to retrieve (optional)</p>"
+          }
+        ]
+      }
+    },
+    "description": "<p>Records  of Corporate commercial packages operating Groups package account(s)</p>",
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Object[]",
+            "optional": false,
+            "field": "Array",
+            "description": "<p>of Objects of records.</p>"
+          }
+        ]
+      }
+    },
+    "error": {
+      "fields": {
+        "Error 4xx": [
+          {
+            "group": "Error 4xx",
+            "type": "Object",
+            "optional": false,
+            "field": "400",
+            "description": "<p>Some parameters may contain invalid values.</p>"
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "src/api/package/routes.js",
+    "groupTitle": "Package"
+  },
+  {
+    "type": "put",
+    "url": "/api/packages/{recordId}",
+    "title": "Update packages",
+    "name": "UpdatePackage",
+    "group": "Package",
+    "permission": [
+      {
+        "name": "master"
+      }
+    ],
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "access_token",
+            "description": "<p>master access token.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "name",
+            "description": "<p>Package full name (required)</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "description",
+            "description": "<p>Package description (required)</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "duration",
+            "description": "<p>Package duration (required)</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "cost",
+            "description": "<p>Package cost (required)</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Object",
+            "optional": false,
+            "field": "Package",
+            "description": "<p>Package's data.</p>"
+          }
+        ]
+      }
+    },
+    "error": {
+      "fields": {
+        "Error 4xx": [
+          {
+            "group": "Error 4xx",
+            "type": "Object",
+            "optional": false,
+            "field": "400",
+            "description": "<p>Some parameters may contain invalid values.</p>"
+          },
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "404",
+            "description": "<p>Package not found.</p>"
+          },
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "401",
+            "description": "<p>master access only.</p>"
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "src/api/package/routes.js",
+    "groupTitle": "Package"
+  },
+  {
+    "type": "post",
     "url": "/api/settings",
     "title": "Create settings",
     "name": "CreateSetting",
@@ -2971,38 +4075,10 @@
           },
           {
             "group": "Parameter",
-            "type": "Boolean",
+            "type": "String",
             "optional": false,
-            "field": "is_pmt_talent",
-            "description": "<p>assert that talent is also a PMT talent</p>"
-          },
-          {
-            "group": "Parameter",
-            "type": "Boolean",
-            "optional": false,
-            "field": "is_pesl_talent",
-            "description": "<p>assert that talent is also a PESL talent</p>"
-          },
-          {
-            "group": "Parameter",
-            "type": "Boolean",
-            "optional": false,
-            "field": "is_pet_talent",
-            "description": "<p>assert that talent is also a PET talent</p>"
-          },
-          {
-            "group": "Parameter",
-            "type": "Boolean",
-            "optional": false,
-            "field": "is_shop_talent",
-            "description": "<p>assert that talent is also a SHOP talent</p>"
-          },
-          {
-            "group": "Parameter",
-            "type": "Boolean",
-            "optional": false,
-            "field": "is_tenant",
-            "description": "<p>assert if talent is a depot tenant</p>"
+            "field": "packages",
+            "description": "<p>Talent programs of interest</p>"
           },
           {
             "group": "Parameter",
@@ -3440,38 +4516,10 @@
           },
           {
             "group": "Parameter",
-            "type": "Boolean",
+            "type": "String",
             "optional": false,
-            "field": "is_pmt_talent",
-            "description": "<p>assert that talent is also a PMT talent</p>"
-          },
-          {
-            "group": "Parameter",
-            "type": "Boolean",
-            "optional": false,
-            "field": "is_pesl_talent",
-            "description": "<p>assert that talent is also a PESL talent</p>"
-          },
-          {
-            "group": "Parameter",
-            "type": "Boolean",
-            "optional": false,
-            "field": "is_pet_talent",
-            "description": "<p>assert that talent is also a PET talent</p>"
-          },
-          {
-            "group": "Parameter",
-            "type": "Boolean",
-            "optional": false,
-            "field": "is_shop_talent",
-            "description": "<p>assert that talent is also a SHOP talent</p>"
-          },
-          {
-            "group": "Parameter",
-            "type": "Boolean",
-            "optional": false,
-            "field": "is_tenant",
-            "description": "<p>assert if talent is a depot tenant</p>"
+            "field": "packages",
+            "description": "<p>Talent programs of interest</p>"
           },
           {
             "group": "Parameter",
@@ -3559,8 +4607,8 @@
     "url": "",
     "version": "0.0.0",
     "filename": "src/api/image/routes.js",
-    "group": "_home_mentor_Projects_Telixia_telixia_app_src_api_image_routes_js",
-    "groupTitle": "_home_mentor_Projects_Telixia_telixia_app_src_api_image_routes_js",
+    "group": "_home_mentor_Projects_Telixia_telixia_backend_src_api_image_routes_js",
+    "groupTitle": "_home_mentor_Projects_Telixia_telixia_backend_src_api_image_routes_js",
     "name": ""
   }
 ]
