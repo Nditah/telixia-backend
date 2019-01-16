@@ -8,3 +8,179 @@
 [2019-01-13T21:49:23.099] [INFO] [package] - { statusCode: 200, customMessage: 'Success', type: 'DEFAULT' } []
 [2019-01-13T22:37:46.224] [INFO] [package] - { statusCode: 200, customMessage: 'Success', type: 'DEFAULT' } []
 [2019-01-13T22:41:21.355] [INFO] [image] - { statusCode: 200, customMessage: 'Success', type: 'DEFAULT' } []
+[2019-01-16T12:15:50.789] [INFO] [country] - { statusCode: 200, customMessage: 'Success', type: 'DEFAULT' } []
+[2019-01-16T12:16:05.838] [INFO] [package] - { statusCode: 200, customMessage: 'Success', type: 'DEFAULT' } []
+[2019-01-16T12:19:28.537] [INFO] [package] - { statusCode: 200, customMessage: 'Success', type: 'DEFAULT' } []
+[2019-01-16T12:23:41.370] [INFO] [package] - { statusCode: 200, customMessage: 'Success', type: 'DEFAULT' } []
+[2019-01-16T12:24:45.458] [INFO] [package] - { statusCode: 200, customMessage: 'Success', type: 'DEFAULT' } []
+[2019-01-16T13:03:14.963] [ERROR] [package] - { SequelizeDatabaseError: Unknown column 'is_available' in 'field list'
+    at Query.formatError (/home/mentor/Projects/Telixia/telixia-backend/node_modules/sequelize/lib/dialects/mysql/query.js:247:16)
+    at Query.handler [as onResult] (/home/mentor/Projects/Telixia/telixia-backend/node_modules/sequelize/lib/dialects/mysql/query.js:68:23)
+    at Query.execute (/home/mentor/Projects/Telixia/telixia-backend/node_modules/mysql2/lib/commands/command.js:30:14)
+    at Connection.handlePacket (/home/mentor/Projects/Telixia/telixia-backend/node_modules/mysql2/lib/connection.js:455:32)
+    at PacketParser.onPacket (/home/mentor/Projects/Telixia/telixia-backend/node_modules/mysql2/lib/connection.js:73:18)
+    at PacketParser.executeStart (/home/mentor/Projects/Telixia/telixia-backend/node_modules/mysql2/lib/packet_parser.js:75:16)
+    at Socket.<anonymous> (/home/mentor/Projects/Telixia/telixia-backend/node_modules/mysql2/lib/connection.js:80:31)
+    at Socket.emit (events.js:182:13)
+    at Socket.EventEmitter.emit (domain.js:442:20)
+    at addChunk (_stream_readable.js:283:12)
+    at readableAddChunk (_stream_readable.js:264:11)
+    at Socket.Readable.push (_stream_readable.js:219:10)
+    at TCP.onread (net.js:638:20)
+  name: 'SequelizeDatabaseError',
+  parent:
+   { Error: Unknown column 'is_available' in 'field list'
+       at Packet.asError (/home/mentor/Projects/Telixia/telixia-backend/node_modules/mysql2/lib/packets/packet.js:684:17)
+       at Query.execute (/home/mentor/Projects/Telixia/telixia-backend/node_modules/mysql2/lib/commands/command.js:28:26)
+       at Connection.handlePacket (/home/mentor/Projects/Telixia/telixia-backend/node_modules/mysql2/lib/connection.js:455:32)
+       at PacketParser.onPacket (/home/mentor/Projects/Telixia/telixia-backend/node_modules/mysql2/lib/connection.js:73:18)
+       at PacketParser.executeStart (/home/mentor/Projects/Telixia/telixia-backend/node_modules/mysql2/lib/packet_parser.js:75:16)
+       at Socket.<anonymous> (/home/mentor/Projects/Telixia/telixia-backend/node_modules/mysql2/lib/connection.js:80:31)
+       at Socket.emit (events.js:182:13)
+       at Socket.EventEmitter.emit (domain.js:442:20)
+       at addChunk (_stream_readable.js:283:12)
+       at readableAddChunk (_stream_readable.js:264:11)
+       at Socket.Readable.push (_stream_readable.js:219:10)
+       at TCP.onread (net.js:638:20)
+     code: 'ER_BAD_FIELD_ERROR',
+     errno: 1054,
+     sqlState: '42S22',
+     sqlMessage: 'Unknown column \'is_available\' in \'field list\'',
+     sql:
+      'SELECT `id`, `name`, `description`, `duration`, `cost`, `is_available`, `created_by`, `updated_by`, `created_at`, `updated_at`, `deleted_at` FROM `package` AS `package` WHERE (`package`.`deleted_at` > \'2019-01-16 12:03:13\' OR `package`.`deleted_at` IS NULL);' },
+  original:
+   { Error: Unknown column 'is_available' in 'field list'
+       at Packet.asError (/home/mentor/Projects/Telixia/telixia-backend/node_modules/mysql2/lib/packets/packet.js:684:17)
+       at Query.execute (/home/mentor/Projects/Telixia/telixia-backend/node_modules/mysql2/lib/commands/command.js:28:26)
+       at Connection.handlePacket (/home/mentor/Projects/Telixia/telixia-backend/node_modules/mysql2/lib/connection.js:455:32)
+       at PacketParser.onPacket (/home/mentor/Projects/Telixia/telixia-backend/node_modules/mysql2/lib/connection.js:73:18)
+       at PacketParser.executeStart (/home/mentor/Projects/Telixia/telixia-backend/node_modules/mysql2/lib/packet_parser.js:75:16)
+       at Socket.<anonymous> (/home/mentor/Projects/Telixia/telixia-backend/node_modules/mysql2/lib/connection.js:80:31)
+       at Socket.emit (events.js:182:13)
+       at Socket.EventEmitter.emit (domain.js:442:20)
+       at addChunk (_stream_readable.js:283:12)
+       at readableAddChunk (_stream_readable.js:264:11)
+       at Socket.Readable.push (_stream_readable.js:219:10)
+       at TCP.onread (net.js:638:20)
+     code: 'ER_BAD_FIELD_ERROR',
+     errno: 1054,
+     sqlState: '42S22',
+     sqlMessage: 'Unknown column \'is_available\' in \'field list\'',
+     sql:
+      'SELECT `id`, `name`, `description`, `duration`, `cost`, `is_available`, `created_by`, `updated_by`, `created_at`, `updated_at`, `deleted_at` FROM `package` AS `package` WHERE (`package`.`deleted_at` > \'2019-01-16 12:03:13\' OR `package`.`deleted_at` IS NULL);' },
+  sql:
+   'SELECT `id`, `name`, `description`, `duration`, `cost`, `is_available`, `created_by`, `updated_by`, `created_at`, `updated_at`, `deleted_at` FROM `package` AS `package` WHERE (`package`.`deleted_at` > \'2019-01-16 12:03:13\' OR `package`.`deleted_at` IS NULL);' }
+[2019-01-16T13:03:35.611] [ERROR] [package] - { SequelizeDatabaseError: Unknown column 'is_available' in 'field list'
+    at Query.formatError (/home/mentor/Projects/Telixia/telixia-backend/node_modules/sequelize/lib/dialects/mysql/query.js:247:16)
+    at Query.handler [as onResult] (/home/mentor/Projects/Telixia/telixia-backend/node_modules/sequelize/lib/dialects/mysql/query.js:68:23)
+    at Query.execute (/home/mentor/Projects/Telixia/telixia-backend/node_modules/mysql2/lib/commands/command.js:30:14)
+    at Connection.handlePacket (/home/mentor/Projects/Telixia/telixia-backend/node_modules/mysql2/lib/connection.js:455:32)
+    at PacketParser.onPacket (/home/mentor/Projects/Telixia/telixia-backend/node_modules/mysql2/lib/connection.js:73:18)
+    at PacketParser.executeStart (/home/mentor/Projects/Telixia/telixia-backend/node_modules/mysql2/lib/packet_parser.js:75:16)
+    at Socket.<anonymous> (/home/mentor/Projects/Telixia/telixia-backend/node_modules/mysql2/lib/connection.js:80:31)
+    at Socket.emit (events.js:182:13)
+    at Socket.EventEmitter.emit (domain.js:442:20)
+    at addChunk (_stream_readable.js:283:12)
+    at readableAddChunk (_stream_readable.js:264:11)
+    at Socket.Readable.push (_stream_readable.js:219:10)
+    at TCP.onread (net.js:638:20)
+  name: 'SequelizeDatabaseError',
+  parent:
+   { Error: Unknown column 'is_available' in 'field list'
+       at Packet.asError (/home/mentor/Projects/Telixia/telixia-backend/node_modules/mysql2/lib/packets/packet.js:684:17)
+       at Query.execute (/home/mentor/Projects/Telixia/telixia-backend/node_modules/mysql2/lib/commands/command.js:28:26)
+       at Connection.handlePacket (/home/mentor/Projects/Telixia/telixia-backend/node_modules/mysql2/lib/connection.js:455:32)
+       at PacketParser.onPacket (/home/mentor/Projects/Telixia/telixia-backend/node_modules/mysql2/lib/connection.js:73:18)
+       at PacketParser.executeStart (/home/mentor/Projects/Telixia/telixia-backend/node_modules/mysql2/lib/packet_parser.js:75:16)
+       at Socket.<anonymous> (/home/mentor/Projects/Telixia/telixia-backend/node_modules/mysql2/lib/connection.js:80:31)
+       at Socket.emit (events.js:182:13)
+       at Socket.EventEmitter.emit (domain.js:442:20)
+       at addChunk (_stream_readable.js:283:12)
+       at readableAddChunk (_stream_readable.js:264:11)
+       at Socket.Readable.push (_stream_readable.js:219:10)
+       at TCP.onread (net.js:638:20)
+     code: 'ER_BAD_FIELD_ERROR',
+     errno: 1054,
+     sqlState: '42S22',
+     sqlMessage: 'Unknown column \'is_available\' in \'field list\'',
+     sql:
+      'SELECT `id`, `name`, `description`, `duration`, `cost`, `is_available`, `created_by`, `updated_by`, `created_at`, `updated_at`, `deleted_at` FROM `package` AS `package` WHERE (`package`.`deleted_at` > \'2019-01-16 12:03:34\' OR `package`.`deleted_at` IS NULL);' },
+  original:
+   { Error: Unknown column 'is_available' in 'field list'
+       at Packet.asError (/home/mentor/Projects/Telixia/telixia-backend/node_modules/mysql2/lib/packets/packet.js:684:17)
+       at Query.execute (/home/mentor/Projects/Telixia/telixia-backend/node_modules/mysql2/lib/commands/command.js:28:26)
+       at Connection.handlePacket (/home/mentor/Projects/Telixia/telixia-backend/node_modules/mysql2/lib/connection.js:455:32)
+       at PacketParser.onPacket (/home/mentor/Projects/Telixia/telixia-backend/node_modules/mysql2/lib/connection.js:73:18)
+       at PacketParser.executeStart (/home/mentor/Projects/Telixia/telixia-backend/node_modules/mysql2/lib/packet_parser.js:75:16)
+       at Socket.<anonymous> (/home/mentor/Projects/Telixia/telixia-backend/node_modules/mysql2/lib/connection.js:80:31)
+       at Socket.emit (events.js:182:13)
+       at Socket.EventEmitter.emit (domain.js:442:20)
+       at addChunk (_stream_readable.js:283:12)
+       at readableAddChunk (_stream_readable.js:264:11)
+       at Socket.Readable.push (_stream_readable.js:219:10)
+       at TCP.onread (net.js:638:20)
+     code: 'ER_BAD_FIELD_ERROR',
+     errno: 1054,
+     sqlState: '42S22',
+     sqlMessage: 'Unknown column \'is_available\' in \'field list\'',
+     sql:
+      'SELECT `id`, `name`, `description`, `duration`, `cost`, `is_available`, `created_by`, `updated_by`, `created_at`, `updated_at`, `deleted_at` FROM `package` AS `package` WHERE (`package`.`deleted_at` > \'2019-01-16 12:03:34\' OR `package`.`deleted_at` IS NULL);' },
+  sql:
+   'SELECT `id`, `name`, `description`, `duration`, `cost`, `is_available`, `created_by`, `updated_by`, `created_at`, `updated_at`, `deleted_at` FROM `package` AS `package` WHERE (`package`.`deleted_at` > \'2019-01-16 12:03:34\' OR `package`.`deleted_at` IS NULL);' }
+[2019-01-16T13:07:11.874] [ERROR] [package] - { SequelizeDatabaseError: Unknown column 'is_available' in 'field list'
+    at Query.formatError (/home/mentor/Projects/Telixia/telixia-backend/node_modules/sequelize/lib/dialects/mysql/query.js:247:16)
+    at Query.handler [as onResult] (/home/mentor/Projects/Telixia/telixia-backend/node_modules/sequelize/lib/dialects/mysql/query.js:68:23)
+    at Query.execute (/home/mentor/Projects/Telixia/telixia-backend/node_modules/mysql2/lib/commands/command.js:30:14)
+    at Connection.handlePacket (/home/mentor/Projects/Telixia/telixia-backend/node_modules/mysql2/lib/connection.js:455:32)
+    at PacketParser.onPacket (/home/mentor/Projects/Telixia/telixia-backend/node_modules/mysql2/lib/connection.js:73:18)
+    at PacketParser.executeStart (/home/mentor/Projects/Telixia/telixia-backend/node_modules/mysql2/lib/packet_parser.js:75:16)
+    at Socket.<anonymous> (/home/mentor/Projects/Telixia/telixia-backend/node_modules/mysql2/lib/connection.js:80:31)
+    at Socket.emit (events.js:182:13)
+    at Socket.EventEmitter.emit (domain.js:442:20)
+    at addChunk (_stream_readable.js:283:12)
+    at readableAddChunk (_stream_readable.js:264:11)
+    at Socket.Readable.push (_stream_readable.js:219:10)
+    at TCP.onread (net.js:638:20)
+  name: 'SequelizeDatabaseError',
+  parent:
+   { Error: Unknown column 'is_available' in 'field list'
+       at Packet.asError (/home/mentor/Projects/Telixia/telixia-backend/node_modules/mysql2/lib/packets/packet.js:684:17)
+       at Query.execute (/home/mentor/Projects/Telixia/telixia-backend/node_modules/mysql2/lib/commands/command.js:28:26)
+       at Connection.handlePacket (/home/mentor/Projects/Telixia/telixia-backend/node_modules/mysql2/lib/connection.js:455:32)
+       at PacketParser.onPacket (/home/mentor/Projects/Telixia/telixia-backend/node_modules/mysql2/lib/connection.js:73:18)
+       at PacketParser.executeStart (/home/mentor/Projects/Telixia/telixia-backend/node_modules/mysql2/lib/packet_parser.js:75:16)
+       at Socket.<anonymous> (/home/mentor/Projects/Telixia/telixia-backend/node_modules/mysql2/lib/connection.js:80:31)
+       at Socket.emit (events.js:182:13)
+       at Socket.EventEmitter.emit (domain.js:442:20)
+       at addChunk (_stream_readable.js:283:12)
+       at readableAddChunk (_stream_readable.js:264:11)
+       at Socket.Readable.push (_stream_readable.js:219:10)
+       at TCP.onread (net.js:638:20)
+     code: 'ER_BAD_FIELD_ERROR',
+     errno: 1054,
+     sqlState: '42S22',
+     sqlMessage: 'Unknown column \'is_available\' in \'field list\'',
+     sql:
+      'SELECT `id`, `name`, `description`, `duration`, `cost`, `is_available`, `created_by`, `updated_by`, `created_at`, `updated_at`, `deleted_at` FROM `package` AS `package` WHERE (`package`.`deleted_at` > \'2019-01-16 12:07:11\' OR `package`.`deleted_at` IS NULL);' },
+  original:
+   { Error: Unknown column 'is_available' in 'field list'
+       at Packet.asError (/home/mentor/Projects/Telixia/telixia-backend/node_modules/mysql2/lib/packets/packet.js:684:17)
+       at Query.execute (/home/mentor/Projects/Telixia/telixia-backend/node_modules/mysql2/lib/commands/command.js:28:26)
+       at Connection.handlePacket (/home/mentor/Projects/Telixia/telixia-backend/node_modules/mysql2/lib/connection.js:455:32)
+       at PacketParser.onPacket (/home/mentor/Projects/Telixia/telixia-backend/node_modules/mysql2/lib/connection.js:73:18)
+       at PacketParser.executeStart (/home/mentor/Projects/Telixia/telixia-backend/node_modules/mysql2/lib/packet_parser.js:75:16)
+       at Socket.<anonymous> (/home/mentor/Projects/Telixia/telixia-backend/node_modules/mysql2/lib/connection.js:80:31)
+       at Socket.emit (events.js:182:13)
+       at Socket.EventEmitter.emit (domain.js:442:20)
+       at addChunk (_stream_readable.js:283:12)
+       at readableAddChunk (_stream_readable.js:264:11)
+       at Socket.Readable.push (_stream_readable.js:219:10)
+       at TCP.onread (net.js:638:20)
+     code: 'ER_BAD_FIELD_ERROR',
+     errno: 1054,
+     sqlState: '42S22',
+     sqlMessage: 'Unknown column \'is_available\' in \'field list\'',
+     sql:
+      'SELECT `id`, `name`, `description`, `duration`, `cost`, `is_available`, `created_by`, `updated_by`, `created_at`, `updated_at`, `deleted_at` FROM `package` AS `package` WHERE (`package`.`deleted_at` > \'2019-01-16 12:07:11\' OR `package`.`deleted_at` IS NULL);' },
+  sql:
+   'SELECT `id`, `name`, `description`, `duration`, `cost`, `is_available`, `created_by`, `updated_by`, `created_at`, `updated_at`, `deleted_at` FROM `package` AS `package` WHERE (`package`.`deleted_at` > \'2019-01-16 12:07:11\' OR `package`.`deleted_at` IS NULL);' }

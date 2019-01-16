@@ -34,6 +34,7 @@ var force = _constants.DATABASE.DROP_TABLE_IF_EXIST.FALSE; /**
                                                             * @property {String} description Package description (required)
                                                             * @property {Number} duration Package duration (required)
                                                             * @property {Number} cost Package cost (required)
+                                                            * @property {Boolean} is_available Package is current availability
                                                             * @description Package model holds record of all packages the company deals with
                                                             */
 var schemaFetch = exports.schemaFetch = {
@@ -48,6 +49,7 @@ var schemaCreate = exports.schemaCreate = {
     description: _joi2.default.string().required(),
     duration: _joi2.default.number().optional(),
     cost: _joi2.default.number().optional(),
+    is_available: _joi2.default.boolean().optional(),
     created_by: _joi2.default.number().required()
 };
 
@@ -56,6 +58,7 @@ var schemaUpdate = exports.schemaUpdate = {
     description: _joi2.default.string().optional(),
     duration: _joi2.default.number().optional(),
     cost: _joi2.default.number().optional(),
+    is_available: _joi2.default.boolean().optional(),
     updated_by: _joi2.default.number().required()
 };
 
@@ -65,6 +68,7 @@ var schema = exports.schema = {
     description: { type: Sequelize.STRING, allowNull: false },
     duration: { type: Sequelize.TINYINT(2), comment: "Weeks", allowNull: false, defaultValue: 4 },
     cost: { type: Sequelize.DECIMAL(10, 2), allowNull: false, defaultValue: 20000.00 },
+    is_available: { type: Sequelize.BOOLEAN, allowNull: false, defaultValue: true },
     created_by: { type: Sequelize.INTEGER(11), allowNull: false, defaultValue: 1 },
     updated_by: { type: Sequelize.INTEGER(11) }
 };

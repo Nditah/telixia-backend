@@ -47,6 +47,7 @@ router.get("/packages", _controller.fetchRecord);
  * @apiParam {String} description Package description (required)
  * @apiParam {Number} duration Package duration (required)
  * @apiParam {Number} cost Package cost (required)
+ * @apiParam {Boolean} is_available Package is current availability
  * @apiSuccess {Object} Package Package's data.
  * @apiError {Object} 400 Some parameters may contain invalid values.
  * @apiError 404 Package not found.
@@ -64,6 +65,7 @@ router.post("/packages", [_authorization.checkAuth, _authorization.isValidAdmin]
  * @apiParam {String} description Package description (required)
  * @apiParam {Number} duration Package duration (required)
  * @apiParam {Number} cost Package cost (required)
+ * @apiParam {Boolean} is_available Package is current availability
  * @apiSuccess {Object} Package Package's data.
  * @apiError {Object} 400 Some parameters may contain invalid values.
  * @apiError 404 Package not found.

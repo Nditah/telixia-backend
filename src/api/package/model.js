@@ -5,6 +5,7 @@
  * @property {String} description Package description (required)
  * @property {Number} duration Package duration (required)
  * @property {Number} cost Package cost (required)
+ * @property {Boolean} is_available Package is current availability
  * @description Package model holds record of all packages the company deals with
  */
 import Joi from "joi";
@@ -13,7 +14,7 @@ import sequelize from "../../config/sequelize";
 import table from "./table";
 import { DATABASE } from "../../constants";
 
-const force = DATABASE.DROP_TABLE_IF_EXIST.FALSE;
+const force = DATABASE.DROP_TABLE_IF_EXIST.TRUE;
 
 export const schemaFetch = {
     id: Joi.number().optional(),
@@ -27,6 +28,7 @@ export const schemaCreate = {
     description: Joi.string().required(),
     duration: Joi.number().optional(),
     cost: Joi.number().optional(),
+    is_available: Joi.boolean().optional(),
     created_by: Joi.number().required(),
 };
 
@@ -35,6 +37,7 @@ export const schemaUpdate = {
     description: Joi.string().optional(),
     duration: Joi.number().optional(),
     cost: Joi.number().optional(),
+    is_available: Joi.boolean().optional(),
     updated_by: Joi.number().required(),
 };
 
@@ -44,6 +47,7 @@ export const schema = {
     description: { type: Sequelize.STRING, allowNull: false },
     duration: { type: Sequelize.TINYINT(2), comment: "Weeks", allowNull: false, defaultValue: 4 },
     cost: { type: Sequelize.DECIMAL(10, 2), allowNull: false, defaultValue: 20000.00 },
+    is_available: { type: Sequelize.BOOLEAN, allowNull: false, defaultValue: true },
     created_by: { type: Sequelize.INTEGER(11), allowNull: false, defaultValue: 1 },
     updated_by: { type: Sequelize.INTEGER(11) },
 };

@@ -3312,6 +3312,13 @@ define({ "api": [
             "optional": false,
             "field": "cost",
             "description": "<p>Package cost (required)</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Boolean",
+            "optional": false,
+            "field": "is_available",
+            "description": "<p>Package is current availability</p>"
           }
         ]
       }
@@ -3547,6 +3554,13 @@ define({ "api": [
             "optional": false,
             "field": "cost",
             "description": "<p>Package cost (required)</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Boolean",
+            "optional": false,
+            "field": "is_available",
+            "description": "<p>Package is current availability</p>"
           }
         ]
       }
