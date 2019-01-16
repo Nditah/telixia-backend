@@ -584,7 +584,7 @@ var SMS = exports.SMS = {
 
 var DATABASE = exports.DATABASE = {
     TABLES: ["AMIND", "TALENT", "CLIENT", "INVOICE", "PACKAGE"],
-    DROP_TABLE_IF_EXIST: { TRUE: true, FALSE: true },
+    DROP_TABLE_IF_EXIST: { TRUE: true, FALSE: false },
     RECORD_STATUS: {
         PENDING: "PENDING",
         REJECTED: "REJECTED",

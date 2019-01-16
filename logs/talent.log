@@ -184,3 +184,16 @@
       'SELECT `id`, `name`, `description`, `duration`, `cost`, `is_available`, `created_by`, `updated_by`, `created_at`, `updated_at`, `deleted_at` FROM `package` AS `package` WHERE (`package`.`deleted_at` > \'2019-01-16 12:07:11\' OR `package`.`deleted_at` IS NULL);' },
   sql:
    'SELECT `id`, `name`, `description`, `duration`, `cost`, `is_available`, `created_by`, `updated_by`, `created_at`, `updated_at`, `deleted_at` FROM `package` AS `package` WHERE (`package`.`deleted_at` > \'2019-01-16 12:07:11\' OR `package`.`deleted_at` IS NULL);' }
+[2019-01-16T13:21:13.919] [INFO] [package] - { statusCode: 200, customMessage: 'Success', type: 'DEFAULT' } []
+[2019-01-16T13:34:23.832] [INFO] [package] - { statusCode: 200, customMessage: 'Success', type: 'DEFAULT' } []
+[2019-01-16T13:36:07.630] [INFO] [package] - { statusCode: 200, customMessage: 'Success', type: 'DEFAULT' } []
+[2019-01-16T13:42:32.885] [INFO] [package] - { statusCode: 200, customMessage: 'Success', type: 'DEFAULT' } []
+[2019-01-16T13:46:37.907] [INFO] [package] - { statusCode: 200, customMessage: 'Success', type: 'DEFAULT' } []
+[2019-01-16T13:47:36.000] [INFO] [package] - { statusCode: 200, customMessage: 'Success', type: 'DEFAULT' } []
+[2019-01-16T13:49:17.711] [INFO] [package] - { statusCode: 200, customMessage: 'Success', type: 'DEFAULT' } []
+[2019-01-16T13:50:41.399] [INFO] [package] - { statusCode: 200, customMessage: 'Success', type: 'DEFAULT' } []
+[2019-01-16T13:52:40.108] [INFO] [package] - { statusCode: 200, customMessage: 'Success', type: 'DEFAULT' } []
+[2019-01-16T13:52:54.252] [INFO] [package] - { statusCode: 200, customMessage: 'Success', type: 'DEFAULT' } []
+[2019-01-16T13:55:02.532] [INFO] [package] - { statusCode: 200, customMessage: 'Success', type: 'DEFAULT' } []
+[2019-01-16T13:55:39.888] [INFO] [package] - { statusCode: 200, customMessage: 'Success', type: 'DEFAULT' } []
+[2019-01-16T13:56:02.785] [INFO] [package] - { statusCode: 200, customMessage: 'Success', type: 'DEFAULT' } []

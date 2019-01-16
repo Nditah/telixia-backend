@@ -27,16 +27,16 @@ function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj;
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var force = _constants.DATABASE.DROP_TABLE_IF_EXIST.FALSE; /**
-                                                            * @author 4Dcoder
-                                                            * @property {Number} id package primaryKey
-                                                            * @property {String} name Package full name (required)
-                                                            * @property {String} description Package description (required)
-                                                            * @property {Number} duration Package duration (required)
-                                                            * @property {Number} cost Package cost (required)
-                                                            * @property {Boolean} is_available Package is current availability
-                                                            * @description Package model holds record of all packages the company deals with
-                                                            */
+var force = _constants.DATABASE.DROP_TABLE_IF_EXIST.TRUE; /**
+                                                           * @author 4Dcoder
+                                                           * @property {Number} id package primaryKey
+                                                           * @property {String} name Package full name (required)
+                                                           * @property {String} description Package description (required)
+                                                           * @property {Number} duration Package duration (required)
+                                                           * @property {Number} cost Package cost (required)
+                                                           * @property {Boolean} is_available Package is current availability
+                                                           * @description Package model holds record of all packages the company deals with
+                                                           */
 var schemaFetch = exports.schemaFetch = {
     id: _joi2.default.number().optional(),
     offset: _joi2.default.number().optional(),
