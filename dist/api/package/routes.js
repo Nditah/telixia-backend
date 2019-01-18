@@ -53,7 +53,7 @@ router.get("/packages", _controller.fetchRecord);
  * @apiError 404 Package not found.
  * @apiError 401 master access only.
  */
-router.post("/packages", _controller.createRecord);
+router.post("/packages", [_authorization.checkAuth, _authorization.isValidAdmin], _controller.createRecord);
 
 /**
  * @api {put} /api/packages/{recordId} Update packages
@@ -71,7 +71,7 @@ router.post("/packages", _controller.createRecord);
  * @apiError 404 Package not found.
  * @apiError 401 master access only.
  */
-router.put("/packages/:recordId", _controller.updateRecord);
+router.put("/packages/:recordId", [_authorization.checkAuth, _authorization.isValidAdmin], _controller.updateRecord);
 
 /**
  * @api {delete} /api/packages/{recordId} Delete packages
@@ -83,7 +83,7 @@ router.put("/packages/:recordId", _controller.updateRecord);
  * @apiError 404 Package not found.
  * @apiError 401 master access only.
  */
-router.delete("/packages/:recordId", _controller.deleteRecord);
+router.delete("/packages/:recordId", [_authorization.checkAuth, _authorization.isValidAdmin], _controller.deleteRecord);
 
 exports.default = router;
 //# sourceMappingURL=routes.js.map

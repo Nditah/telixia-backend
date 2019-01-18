@@ -121,6 +121,6 @@ export async function login(req, res) {
     const { error } = Joi.validate(req.body, schemaLogin);
     if (error) return fail(res, 422, `Error validating request data. ${error.message}`);
     return talentAuthenticate(req.body)
-        .then(token => success(res, 200, { token }, "Login was successful!"))
+        .then(tokenId => success(res, 200, tokenId, "Login was successful!"))
         .catch(err => fail(res, 500, `Error occurred. ${err.message}`));
 }

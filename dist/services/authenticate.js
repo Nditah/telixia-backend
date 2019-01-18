@@ -71,7 +71,7 @@ function adminAuthenticate(params) {
         var token = _jsonwebtoken2.default.sign(payload, _constants.JWT.jwtSecret, {
             expiresIn: _constants.JWT.tokenExpireTime
         });
-        return token;
+        return { token: token, id: user.id };
     });
 }
 
@@ -106,7 +106,7 @@ function talentAuthenticate(params) {
         var token = _jsonwebtoken2.default.sign(payload, _constants.JWT.jwtSecret, {
             expiresIn: _constants.JWT.tokenExpireTime
         });
-        return token;
+        return { token: token, id: user.id };
     });
 }
 
@@ -140,7 +140,7 @@ function clientAuthenticate(params) {
         var token = _jsonwebtoken2.default.sign(payload, _constants.JWT.jwtSecret, {
             expiresIn: _constants.JWT.tokenExpireTime
         });
-        return token;
+        return { token: token, id: user.id };
     });
 }
 //# sourceMappingURL=authenticate.js.map

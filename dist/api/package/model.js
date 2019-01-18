@@ -49,8 +49,8 @@ var schemaCreate = exports.schemaCreate = {
     description: _joi2.default.string().required(),
     duration: _joi2.default.number().optional(),
     cost: _joi2.default.number().optional(),
-    is_available: _joi2.default.boolean().optional(),
-    created_by: _joi2.default.number().required()
+    is_available: _joi2.default.boolean().optional()
+    // created_by: Joi.number().required(),
 };
 
 var schemaUpdate = exports.schemaUpdate = {
@@ -58,8 +58,8 @@ var schemaUpdate = exports.schemaUpdate = {
     description: _joi2.default.string().optional(),
     duration: _joi2.default.number().optional(),
     cost: _joi2.default.number().optional(),
-    is_available: _joi2.default.boolean().optional(),
-    updated_by: _joi2.default.number().required()
+    is_available: _joi2.default.boolean().optional()
+    // updated_by: Joi.number().required(),
 };
 
 var schema = exports.schema = {
@@ -70,7 +70,7 @@ var schema = exports.schema = {
     cost: { type: Sequelize.DECIMAL(10, 2), allowNull: false, defaultValue: 20000.00 },
     is_available: { type: Sequelize.BOOLEAN, allowNull: false, defaultValue: true },
     created_by: { type: Sequelize.INTEGER(11), allowNull: false, defaultValue: 1 },
-    updated_by: { type: Sequelize.INTEGER(11) }
+    updated_by: { type: Sequelize.INTEGER(11), defaultValue: 1 }
 };
 
 var options = {

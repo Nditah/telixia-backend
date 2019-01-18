@@ -29,7 +29,7 @@ export const schemaCreate = {
     duration: Joi.number().optional(),
     cost: Joi.number().optional(),
     is_available: Joi.boolean().optional(),
-    created_by: Joi.number().required(),
+    // created_by: Joi.number().required(),
 };
 
 export const schemaUpdate = {
@@ -38,7 +38,7 @@ export const schemaUpdate = {
     duration: Joi.number().optional(),
     cost: Joi.number().optional(),
     is_available: Joi.boolean().optional(),
-    updated_by: Joi.number().required(),
+    // updated_by: Joi.number().required(),
 };
 
 export const schema = {
@@ -49,7 +49,7 @@ export const schema = {
     cost: { type: Sequelize.DECIMAL(10, 2), allowNull: false, defaultValue: 20000.00 },
     is_available: { type: Sequelize.BOOLEAN, allowNull: false, defaultValue: true },
     created_by: { type: Sequelize.INTEGER(11), allowNull: false, defaultValue: 1 },
-    updated_by: { type: Sequelize.INTEGER(11) },
+    updated_by: { type: Sequelize.INTEGER(11), defaultValue: 1 },
 };
 
 const options = {

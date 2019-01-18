@@ -36,7 +36,7 @@ export function adminAuthenticate(params) {
             const token = jwt.sign(payload, JWT.jwtSecret, {
                 expiresIn: JWT.tokenExpireTime,
             });
-            return token;
+            return { token, id: user.id };
         });
 }
 
@@ -68,7 +68,7 @@ export function talentAuthenticate(params) {
             const token = jwt.sign(payload, JWT.jwtSecret, {
                 expiresIn: JWT.tokenExpireTime,
             });
-            return token;
+            return { token, id: user.id };
         });
 }
 
@@ -99,6 +99,6 @@ export function clientAuthenticate(params) {
             const token = jwt.sign(payload, JWT.jwtSecret, {
                 expiresIn: JWT.tokenExpireTime,
             });
-            return token;
+            return { token, id: user.id };
         });
 }

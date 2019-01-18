@@ -41,7 +41,7 @@ router.get("/packages", fetchRecord);
  * @apiError 404 Package not found.
  * @apiError 401 master access only.
  */
-router.post("/packages", createRecord);
+router.post("/packages", [checkAuth, isValidAdmin], createRecord);
 
 /**
  * @api {put} /api/packages/{recordId} Update packages
@@ -59,7 +59,7 @@ router.post("/packages", createRecord);
  * @apiError 404 Package not found.
  * @apiError 401 master access only.
  */
-router.put("/packages/:recordId", updateRecord);
+router.put("/packages/:recordId", [checkAuth, isValidAdmin], updateRecord);
 
 /**
  * @api {delete} /api/packages/{recordId} Delete packages
@@ -71,6 +71,6 @@ router.put("/packages/:recordId", updateRecord);
  * @apiError 404 Package not found.
  * @apiError 401 master access only.
  */
-router.delete("/packages/:recordId", deleteRecord);
+router.delete("/packages/:recordId", [checkAuth, isValidAdmin], deleteRecord);
 
 export default router;

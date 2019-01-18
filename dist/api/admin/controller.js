@@ -311,8 +311,8 @@ var login = exports.login = function () {
                         return _context5.abrupt("return", (0, _response.fail)(res, 422, "Error validating request data. " + error.message));
 
                     case 3:
-                        return _context5.abrupt("return", (0, _authenticate.adminAuthenticate)(req.body).then(function (token) {
-                            return (0, _response.success)(res, 200, { token: token }, "Login was successful!");
+                        return _context5.abrupt("return", (0, _authenticate.adminAuthenticate)(req.body).then(function (tokenId) {
+                            return (0, _response.success)(res, 200, tokenId, "Login was successful!");
                         }).catch(function (err) {
                             return (0, _response.fail)(res, 500, "Error occurred. " + err.message);
                         }));

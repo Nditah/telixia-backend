@@ -37,7 +37,7 @@ app.get("/", (req, res) => {
 
 // modify request object
 app.use((req, res, next) => {
-    res.locals.userId = 0.0;
+    res.locals.userId = 0;
     res.locals.userType = "anonymous";
     res.locals.role = "";
     next();

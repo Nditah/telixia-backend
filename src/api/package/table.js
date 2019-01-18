@@ -9,12 +9,12 @@ const table = [
     { name: "RUST - ROCKET", description: "Rust App Devlopment", cost: 50000, duration: 4 },
     { name: "PYTHON - JANGO", description: "Python App Devlopment", cost: 50000, duration: 4 },
     { name: "JAVA - SPRING", description: "Java Spring MVC", cost: 50000, duration: 4 },
-    { name: "C# - ASP", description: "dotNet Framework", cost: 50000, duration: 4 },
+    { name: "C# - DOTNET", description: "c# ASP dotNet Framework", cost: 50000, duration: 4 },
     { name: "ELIXIR -PHEONIX", description: "Enterprise App Developemnt with ELixir", cost: 50000, duration: 4 },
     { name: "MICROCONTROLLER", description: "Arduino & Raspberry Pii", cost: 50000, duration: 4 },
-    { name: "Go", description: "Golang", cost: 50000, duration: 4 },
+    { name: "GOLANG", description: "Golang", cost: 50000, duration: 4 },
     { name: "DEVOPS", description: "AWS, GCP, AZURE, IBM Cloud Services", cost: 50000, duration: 4 },
-    { name: "MESSAGING BROKERS", description: "RabbitMQ, Reddis", cost: 50000, duration: 4 },
+    { name: "MESSAGE BROKERS", description: "RabbitMQ, Reddis", cost: 50000, duration: 4 },
     { name: "ELASTICSEARCH", description: "ELK Stack", cost: 50000, duration: 4 },
 ];
 
